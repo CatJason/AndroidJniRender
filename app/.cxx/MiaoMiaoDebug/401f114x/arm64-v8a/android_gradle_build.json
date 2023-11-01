@@ -1,0 +1,112 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/CMakeLists.txt",
+    "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/CMakeLists.txt",
+    "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/CMakeLists.txt",
+    "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/contrib/CMakeLists.txt",
+    "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/contrib/zlib/CMakeLists.txt",
+    "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/contrib/irrXML/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/jason/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/.cxx/MiaoMiaoDebug/401f114x/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/jason/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/.cxx/MiaoMiaoDebug/401f114x/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "uninstall-MiaoMiaoDebug-arm64-v8a": {
+      "buildCommandComponents": [
+        "/Users/jason/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/.cxx/MiaoMiaoDebug/401f114x/arm64-v8a",
+        "uninstall"
+      ],
+      "buildType": "debug",
+      "abi": "arm64-v8a",
+      "artifactName": "uninstall"
+    },
+    "IrrXML-MiaoMiaoDebug-arm64-v8a": {
+      "buildCommandComponents": [
+        "/Users/jason/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/.cxx/MiaoMiaoDebug/401f114x/arm64-v8a",
+        "IrrXML"
+      ],
+      "buildType": "debug",
+      "abi": "arm64-v8a",
+      "artifactName": "IrrXML",
+      "output": "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/.cxx/MiaoMiaoDebug/401f114x/arm64-v8a/Assimp/contrib/irrXML/libIrrXML.a"
+    },
+    "zlibstatic-MiaoMiaoDebug-arm64-v8a": {
+      "buildCommandComponents": [
+        "/Users/jason/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/.cxx/MiaoMiaoDebug/401f114x/arm64-v8a",
+        "zlibstatic"
+      ],
+      "buildType": "debug",
+      "abi": "arm64-v8a",
+      "artifactName": "zlibstatic",
+      "output": "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/.cxx/MiaoMiaoDebug/401f114x/arm64-v8a/Assimp/contrib/zlib/libzlibstatic.a"
+    },
+    "native-lib-MiaoMiaoDebug-arm64-v8a": {
+      "buildCommandComponents": [
+        "/Users/jason/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/.cxx/MiaoMiaoDebug/401f114x/arm64-v8a",
+        "native-lib"
+      ],
+      "buildType": "debug",
+      "abi": "arm64-v8a",
+      "artifactName": "native-lib",
+      "output": "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/build/intermediates/cxx/MiaoMiaoDebug/401f114x/obj/arm64-v8a/libnative-lib.so",
+      "runtimeFiles": [
+        "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/libs/arm64-v8a/libopencv_java3.so",
+        "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/build/intermediates/cxx/MiaoMiaoDebug/401f114x/obj/arm64-v8a/libassimp.so"
+      ]
+    },
+    "zlib-MiaoMiaoDebug-arm64-v8a": {
+      "buildCommandComponents": [
+        "/Users/jason/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/.cxx/MiaoMiaoDebug/401f114x/arm64-v8a",
+        "zlib"
+      ],
+      "buildType": "debug",
+      "abi": "arm64-v8a",
+      "artifactName": "zlib",
+      "output": "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/build/intermediates/cxx/MiaoMiaoDebug/401f114x/obj/arm64-v8a/libzlib.so",
+      "runtimeFiles": []
+    },
+    "assimp-MiaoMiaoDebug-arm64-v8a": {
+      "buildCommandComponents": [
+        "/Users/jason/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/.cxx/MiaoMiaoDebug/401f114x/arm64-v8a",
+        "assimp"
+      ],
+      "buildType": "debug",
+      "abi": "arm64-v8a",
+      "artifactName": "assimp",
+      "output": "/Users/jason/AndroidStudioProjects/AndroidJniRender/app/build/intermediates/cxx/MiaoMiaoDebug/401f114x/obj/arm64-v8a/libassimp.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cc",
+    "cpp"
+  ]
+}
