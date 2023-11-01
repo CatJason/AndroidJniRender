@@ -1,99 +1,22 @@
 ninja: Entering directory `/Users/jason/AndroidStudioProjects/AndroidJniRender/app/.cxx/MiaoMiaoDebug/401f114x/arm64-v8a'
-[1/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/adler32.o
-[2/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/crc32.o
-[3/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/compress.o
-[4/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/gzclose.o
-[5/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/deflate.o
-[6/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/gzlib.o
-[7/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/gzread.o
-[8/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/gl/GLManager.cpp.o
-[9/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/gzwrite.o
-[10/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/utils/fileUtils.cpp.o
-[11/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/inflate.o
-[12/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/jniCalls/gestureClass.cpp.o
-[13/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/jniCalls/myGLRenderer.cpp.o
-[14/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/utils/assetManager.cpp.o
-[15/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/inffast.o
-[16/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/jniCalls/assimpActivity.cpp.o
-[17/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/infback.o
-[18/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/camera/GLCamera.cpp.o
-[19/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/inftrees.o
-[20/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/uncompr.o
-[21/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/zutil.o
-[22/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/compress.o
-[23/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/gzclose.o
-[24/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/trees.o
-[25/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/crc32.o
-[26/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/adler32.o
-[27/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/deflate.o
-[28/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/gzlib.o
-[29/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/gzread.o
-[30/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/gzwrite.o
-[31/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/inffast.o
-[32/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/inftrees.o
-[33/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/inflate.o
-[34/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/infback.o
-[35/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/uncompr.o
-[36/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/zutil.o
-[37/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/trees.o
-[38/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/shader/shaderLoader.cpp.o
-/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/shader/shaderLoader.cpp:213:1: warning: control may reach end of non-void function [-Wreturn-type]
-}
-^
-1 warning generated.
-[39/242] Linking C shared library /Users/jason/AndroidStudioProjects/AndroidJniRender/app/build/intermediates/cxx/MiaoMiaoDebug/401f114x/obj/arm64-v8a/libzlib.so
-[40/242] Linking C static library Assimp/contrib/zlib/libzlibstatic.a
-[41/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/DefaultIOStream.cpp.o
-[42/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BaseProcess.cpp.o
-[43/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/CInterfaceIOWrapper.cpp.o
-[44/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/DefaultIOSystem.cpp.o
-[45/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SGSpatialSort.cpp.o
-[46/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/PostStepRegistry.cpp.o
-[47/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/VertexTriangleAdjacency.cpp.o
-[48/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SpatialSort.cpp.o
-[49/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ScenePreprocessor.cpp.o
-[50/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/modelLoader/modelAssimp.cpp.o
-[51/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/modelLoader/assimpLoader.cpp.o
-[52/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Assimp.cpp.o
-[53/242] Building CXX object Assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/irrXML.cpp.o
-[54/242] Linking CXX static library Assimp/contrib/irrXML/libIrrXML.a
-[55/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BaseImporter.cpp.o
-[56/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ImporterRegistry.cpp.o
-In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/ImporterRegistry.cpp:50:
-In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/vector:274:
-In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/__bit_reference:15:
-In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/algorithm:643:
-/Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory:2338:5: warning: delete called on 'pmx::PmxVertexSkinning' that is abstract but has non-virtual destructor [-Wdelete-abstract-non-virtual-dtor]
-    delete __ptr;
-    ^
-/Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory:2593:7: note: in instantiation of member function 'std::__ndk1::default_delete<pmx::PmxVertexSkinning>::operator()' requested here
-      __ptr_.second()(__tmp);
-      ^
-/Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory:2547:19: note: in instantiation of member function 'std::__ndk1::unique_ptr<pmx::PmxVertexSkinning, std::__ndk1::default_delete<pmx::PmxVertexSkinning> >::reset' requested here
-  ~unique_ptr() { reset(); }
-                  ^
-/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/MMDPmxParser.h:195:3: note: in instantiation of member function 'std::__ndk1::unique_ptr<pmx::PmxVertexSkinning, std::__ndk1::default_delete<pmx::PmxVertexSkinning> >::~unique_ptr' requested here
-                PmxVertex()
-                ^
-1 warning generated.
-[57/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BlenderTessellator.cpp.o
-[58/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BlenderModifier.cpp.o
-[59/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SceneCombiner.cpp.o
-[60/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Importer.cpp.o
-[61/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCMaterial.cpp.o
-[62/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCProfile.cpp.o
-[63/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCUtil.cpp.o
-[64/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/STEPFileEncoding.cpp.o
-[65/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCReaderGen2.cpp.o
-[66/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCCurve.cpp.o
-[67/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXTokenizer.cpp.o
-[68/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCLoader.cpp.o
-[69/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXImporter.cpp.o
-[70/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCGeometry.cpp.o
-[71/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXUtil.cpp.o
-[72/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/STEPFileReader.cpp.o
-[73/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCBoolean.cpp.o
-[74/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/XGLLoader.cpp.o
+[1/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BlenderTessellator.cpp.o
+[2/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BlenderModifier.cpp.o
+[3/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BlenderBMesh.cpp.o
+[4/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCProfile.cpp.o
+[5/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCMaterial.cpp.o
+[6/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCCurve.cpp.o
+[7/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/STEPFileEncoding.cpp.o
+[8/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCUtil.cpp.o
+[9/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXImporter.cpp.o
+[10/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXTokenizer.cpp.o
+[11/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCBoolean.cpp.o
+[12/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCReaderGen2.cpp.o
+[13/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCGeometry.cpp.o
+[14/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXUtil.cpp.o
+[15/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCLoader.cpp.o
+[16/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/STEPFileReader.cpp.o
+[17/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXProperties.cpp.o
+[18/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/XGLLoader.cpp.o
 In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/XGLLoader.cpp:48:
 In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/XGLLoader.h:48:
 In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/BaseImporter.h:46:
@@ -108,60 +31,56 @@ In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/sr
         vec[i] = fast_atof(&s);
            ^
 1 warning generated.
-[75/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXModel.cpp.o
-[76/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXProperties.cpp.o
-[77/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXDeformer.cpp.o
-[78/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXMaterial.cpp.o
-[79/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXNodeAttribute.cpp.o
-[80/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXAnimation.cpp.o
-[81/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXParser.cpp.o
-[82/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXDocument.cpp.o
-[83/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXBinaryTokenizer.cpp.o
-[84/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCOpenings.cpp.o
-[85/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXDocumentUtil.cpp.o
-[86/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Q3BSPZipArchive.cpp.o
-[87/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/STLExporter.cpp.o
-[88/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Q3BSPFileParser.cpp.o
-[89/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXMeshGeometry.cpp.o
-[90/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Q3DLoader.cpp.o
-[91/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/TerragenLoader.cpp.o
-[92/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/XFileExporter.cpp.o
-[93/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DExporter.cpp.o
-[94/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/RawLoader.cpp.o
-[95/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Q3BSPFileImporter.cpp.o
-[96/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/STLLoader.cpp.o
-[97/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/UnrealLoader.cpp.o
-[98/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SMDLoader.cpp.o
-[99/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Group.cpp.o
-[100/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Geometry2D.cpp.o
-[101/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/XFileImporter.cpp.o
-[102/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SIBImporter.cpp.o
-[103/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Networking.cpp.o
-[104/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Light.cpp.o
-[105/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Metadata.cpp.o
-[106/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Shape.cpp.o
-[107/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Geometry3D.cpp.o
-[108/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/XFileParser.cpp.o
-[109/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/glTFExporter.cpp.o
-[110/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DVocabulary.cpp.o
-[111/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/glTF2Exporter.cpp.o
-[112/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/D3MFExporter.cpp.o
-[113/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXConverter.cpp.o
-[114/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Texturing.cpp.o
-[115/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Postprocess.cpp.o
-[116/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/common/shapes.cc.o
-[117/242] Building C object Assimp/code/CMakeFiles/assimp.dir/__/contrib/unzip/ioapi.c.o
-[118/242] Building C object Assimp/code/CMakeFiles/assimp.dir/__/contrib/unzip/unzip.c.o
-[119/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Rendering.cpp.o
-[120/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/sweep/advancing_front.cc.o
-[121/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/D3MFOpcPackage.cpp.o
-[122/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/D3MFImporter.cpp.o
-[123/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/sweep/cdt.cc.o
-[124/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter.cpp.o
-[125/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/sweep/sweep.cc.o
-[126/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/sweep/sweep_context.cc.o
-[127/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/DDLNode.cpp.o
-[128/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MMDPmxParser.cpp.o
+[19/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXParser.cpp.o
+[20/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXModel.cpp.o
+[21/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXMaterial.cpp.o
+[22/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXBinaryTokenizer.cpp.o
+[23/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXDocument.cpp.o
+[24/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXDeformer.cpp.o
+[25/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXNodeAttribute.cpp.o
+[26/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXAnimation.cpp.o
+[27/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXDocumentUtil.cpp.o
+[28/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXMeshGeometry.cpp.o
+[29/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/STLExporter.cpp.o
+[30/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Q3BSPZipArchive.cpp.o
+[31/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Q3BSPFileParser.cpp.o
+[32/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Q3DLoader.cpp.o
+[33/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCOpenings.cpp.o
+[34/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/XFileExporter.cpp.o
+[35/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/TerragenLoader.cpp.o
+[36/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DExporter.cpp.o
+[37/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Q3BSPFileImporter.cpp.o
+[38/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/RawLoader.cpp.o
+[39/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/STLLoader.cpp.o
+[40/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SMDLoader.cpp.o
+[41/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/XFileImporter.cpp.o
+[42/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/UnrealLoader.cpp.o
+[43/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Group.cpp.o
+[44/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Geometry2D.cpp.o
+[45/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SIBImporter.cpp.o
+[46/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Light.cpp.o
+[47/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Networking.cpp.o
+[48/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FBXConverter.cpp.o
+[49/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Metadata.cpp.o
+[50/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DVocabulary.cpp.o
+[51/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Geometry3D.cpp.o
+[52/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/glTFExporter.cpp.o
+[53/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/glTF2Exporter.cpp.o
+[54/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/D3MFExporter.cpp.o
+[55/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Shape.cpp.o
+[56/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Texturing.cpp.o
+[57/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/XFileParser.cpp.o
+[58/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Postprocess.cpp.o
+[59/242] Building C object Assimp/code/CMakeFiles/assimp.dir/__/contrib/unzip/ioapi.c.o
+[60/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/common/shapes.cc.o
+[61/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter_Rendering.cpp.o
+[62/242] Building C object Assimp/code/CMakeFiles/assimp.dir/__/contrib/unzip/unzip.c.o
+[63/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/D3MFImporter.cpp.o
+[64/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/D3MFOpcPackage.cpp.o
+[65/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/sweep/advancing_front.cc.o
+[66/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/sweep/cdt.cc.o
+[67/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/X3DImporter.cpp.o
+[68/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MMDPmxParser.cpp.o
 In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/MMDPmxParser.cpp:42:
 In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/MMDPmxParser.h:43:
 In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/vector:274:
@@ -265,36 +184,12 @@ In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchai
                         this->skinning = mmd::make_unique<PmxVertexSkinningQDEF>();
                                          ^
 6 warnings generated.
-[129/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/OpenDDLCommon.cpp.o
-[130/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/OpenDDLStream.cpp.o
-[131/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ScaleProcess.cpp.o
-[132/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MMDImporter.cpp.o
-In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/MMDImporter.cpp:44:
-In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/MMDImporter.h:43:
-In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/BaseImporter.h:46:
-In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/Exceptional.h:45:
-In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/include/assimp/DefaultIOStream.h:47:
-In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/include/assimp/IOStream.hpp:50:
-In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/include/assimp/types.h:70:
-In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/string:504:
-In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/string_view:175:
-In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/__string:56:
-In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/algorithm:643:
-/Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory:2338:5: warning: delete called on 'pmx::PmxVertexSkinning' that is abstract but has non-virtual destructor [-Wdelete-abstract-non-virtual-dtor]
-    delete __ptr;
-    ^
-/Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory:2593:7: note: in instantiation of member function 'std::__ndk1::default_delete<pmx::PmxVertexSkinning>::operator()' requested here
-      __ptr_.second()(__tmp);
-      ^
-/Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory:2547:19: note: in instantiation of member function 'std::__ndk1::unique_ptr<pmx::PmxVertexSkinning, std::__ndk1::default_delete<pmx::PmxVertexSkinning> >::reset' requested here
-  ~unique_ptr() { reset(); }
-                  ^
-/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/MMDPmxParser.h:195:3: note: in instantiation of member function 'std::__ndk1::unique_ptr<pmx::PmxVertexSkinning, std::__ndk1::default_delete<pmx::PmxVertexSkinning> >::~unique_ptr' requested here
-                PmxVertex()
-                ^
-1 warning generated.
-[133/242] Building C object Assimp/code/CMakeFiles/assimp.dir/__/contrib/zip/src/zip.c.o
-[134/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FIReader.cpp.o
+[69/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/sweep/sweep.cc.o
+[70/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/OpenDDLCommon.cpp.o
+[71/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/DDLNode.cpp.o
+[72/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/sweep/sweep_context.cc.o
+[73/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/OpenDDLStream.cpp.o
+[74/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FIReader.cpp.o
 In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/FIReader.cpp:48:
 In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/FIReader.hpp:52:
 In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/string:504:
@@ -527,115 +422,220 @@ struct _LIBCPP_TEMPLATE_VIS pair
     CFIReaderImpl(std::unique_ptr<uint8_t[]> data_, size_t size):
     ^
 12 warnings generated.
-[135/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/Value.cpp.o
-[136/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/OpenDDLExport.cpp.o
-[137/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/OpenDDLParser.cpp.o
-[138/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/RemoveComments.cpp.o
-[139/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/TargetAnimation.cpp.o
-[140/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Bitmap.cpp.o
-[141/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/scene.cpp.o
-[142/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Exporter.cpp.o
-[143/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AssimpCExport.cpp.o
-[144/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/CreateAnimMesh.cpp.o
-[145/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Version.cpp.o
-[146/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SkeletonMeshBuilder.cpp.o
-[147/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/DefaultLogger.cpp.o
-[148/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SplitByBoneCountProcess.cpp.o
-[149/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FindDegenerates.cpp.o
-[150/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ConvertToLHProcess.cpp.o
-[151/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ComputeUVMappingProcess.cpp.o
-[152/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/clipper/clipper.cpp.o
-[153/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/CalcTangentsProcess.cpp.o
+[75/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MMDImporter.cpp.o
+In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/MMDImporter.cpp:44:
+In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/MMDImporter.h:43:
+In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/BaseImporter.h:46:
+In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/Exceptional.h:45:
+In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/include/assimp/DefaultIOStream.h:47:
+In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/include/assimp/IOStream.hpp:50:
+In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/include/assimp/types.h:70:
+In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/string:504:
+In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/string_view:175:
+In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/__string:56:
+In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/algorithm:643:
+/Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory:2338:5: warning: delete called on 'pmx::PmxVertexSkinning' that is abstract but has non-virtual destructor [-Wdelete-abstract-non-virtual-dtor]
+    delete __ptr;
+    ^
+/Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory:2593:7: note: in instantiation of member function 'std::__ndk1::default_delete<pmx::PmxVertexSkinning>::operator()' requested here
+      __ptr_.second()(__tmp);
+      ^
+/Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory:2547:19: note: in instantiation of member function 'std::__ndk1::unique_ptr<pmx::PmxVertexSkinning, std::__ndk1::default_delete<pmx::PmxVertexSkinning> >::reset' requested here
+  ~unique_ptr() { reset(); }
+                  ^
+/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/MMDPmxParser.h:195:3: note: in instantiation of member function 'std::__ndk1::unique_ptr<pmx::PmxVertexSkinning, std::__ndk1::default_delete<pmx::PmxVertexSkinning> >::~unique_ptr' requested here
+                PmxVertex()
+                ^
+1 warning generated.
+[76/242] Building C object Assimp/code/CMakeFiles/assimp.dir/__/contrib/zip/src/zip.c.o
+[77/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/Value.cpp.o
+[78/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/OpenDDLExport.cpp.o
+[79/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/OpenDDLParser.cpp.o
+[80/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/jniCalls/assimpActivity.cpp.o
+[81/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/jniCalls/gestureClass.cpp.o
+[82/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/utils/fileUtils.cpp.o
+[83/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/camera/GLCamera.cpp.o
+[84/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/jniCalls/myGLRenderer.cpp.o
+[85/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/gl/GLManager.cpp.o
+[86/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/utils/assetManager.cpp.o
+[87/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/adler32.o
+[88/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/compress.o
+[89/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/crc32.o
+[90/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/gzclose.o
+[91/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/deflate.o
+[92/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/gzread.o
+[93/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/gzlib.o
+[94/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/gzwrite.o
+[95/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/inffast.o
+[96/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/inftrees.o
+[97/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/infback.o
+[98/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/inflate.o
+[99/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/trees.o
+[100/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/zutil.o
+[101/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/uncompr.o
+[102/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/adler32.o
+[103/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/compress.o
+[104/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/crc32.o
+[105/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/gzclose.o
+[106/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/gzlib.o
+[107/242] Linking C static library Assimp/contrib/zlib/libzlibstatic.a
+[108/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/deflate.o
+[109/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/gzread.o
+[110/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/gzwrite.o
+[111/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/inflate.o
+[112/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/inffast.o
+[113/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/inftrees.o
+[114/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/infback.o
+[115/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/trees.o
+[116/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/shader/shaderLoader.cpp.o
+/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/shader/shaderLoader.cpp:213:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+[117/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/uncompr.o
+[118/242] Building C object Assimp/contrib/zlib/CMakeFiles/zlib.dir/zutil.o
+[119/242] Linking C shared library /Users/jason/AndroidStudioProjects/AndroidJniRender/app/build/intermediates/cxx/MiaoMiaoDebug/401f114x/obj/arm64-v8a/libzlib.so
+[120/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/__/contrib/clipper/clipper.cpp.o
+[121/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/DefaultIOStream.cpp.o
+[122/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BaseProcess.cpp.o
+[123/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/DefaultIOSystem.cpp.o
+[124/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/PostStepRegistry.cpp.o
+[125/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/modelLoader/assimpLoader.cpp.o
+[126/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/CInterfaceIOWrapper.cpp.o
+[127/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SGSpatialSort.cpp.o
+[128/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/VertexTriangleAdjacency.cpp.o
+[129/242] Building CXX object CMakeFiles/native-lib.dir/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/cpp/nativeCode/modelLoader/modelAssimp.cpp.o
+[130/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Assimp.cpp.o
+[131/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SpatialSort.cpp.o
+[132/242] Building CXX object Assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/irrXML.cpp.o
+[133/242] Linking CXX static library Assimp/contrib/irrXML/libIrrXML.a
+[134/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ScaleProcess.cpp.o
+[135/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ScenePreprocessor.cpp.o
+[136/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BaseImporter.cpp.o
+[137/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/glTFImporter.cpp.o
+[138/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/TargetAnimation.cpp.o
+[139/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ImporterRegistry.cpp.o
+In file included from /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/ImporterRegistry.cpp:50:
+In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/vector:274:
+In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/__bit_reference:15:
+In file included from /Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/algorithm:643:
+/Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory:2338:5: warning: delete called on 'pmx::PmxVertexSkinning' that is abstract but has non-virtual destructor [-Wdelete-abstract-non-virtual-dtor]
+    delete __ptr;
+    ^
+/Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory:2593:7: note: in instantiation of member function 'std::__ndk1::default_delete<pmx::PmxVertexSkinning>::operator()' requested here
+      __ptr_.second()(__tmp);
+      ^
+/Users/jason/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory:2547:19: note: in instantiation of member function 'std::__ndk1::unique_ptr<pmx::PmxVertexSkinning, std::__ndk1::default_delete<pmx::PmxVertexSkinning> >::reset' requested here
+  ~unique_ptr() { reset(); }
+                  ^
+/Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/MMDPmxParser.h:195:3: note: in instantiation of member function 'std::__ndk1::unique_ptr<pmx::PmxVertexSkinning, std::__ndk1::default_delete<pmx::PmxVertexSkinning> >::~unique_ptr' requested here
+                PmxVertex()
+                ^
+1 warning generated.
+[140/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/scene.cpp.o
+[141/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/RemoveComments.cpp.o
+[142/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Bitmap.cpp.o
+[143/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SkeletonMeshBuilder.cpp.o
+[144/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/glTF2Importer.cpp.o
+[145/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Exporter.cpp.o
+[146/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AssimpCExport.cpp.o
+[147/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Version.cpp.o
+[148/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/CreateAnimMesh.cpp.o
+[149/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SceneCombiner.cpp.o
+[150/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Importer.cpp.o
+[151/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SplitByBoneCountProcess.cpp.o
+[152/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ConvertToLHProcess.cpp.o
+[153/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/DefaultLogger.cpp.o
 [154/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FixNormalsStep.cpp.o
-[155/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/GenFaceNormalsProcess.cpp.o
-[156/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/RemoveVCProcess.cpp.o
-[157/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Subdivision.cpp.o
-[158/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FindInstancesProcess.cpp.o
-[159/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FindInvalidDataProcess.cpp.o
-[160/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/GenVertexNormalsProcess.cpp.o
-[161/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ImproveCacheLocality.cpp.o
-[162/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/LimitBoneWeightsProcess.cpp.o
-[163/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/RemoveRedundantMaterials.cpp.o
-[164/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/PretransformVertices.cpp.o
-[165/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/StandardShapes.cpp.o
-[166/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/JoinVerticesProcess.cpp.o
-[167/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OptimizeGraph.cpp.o
-[168/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SortByPTypeProcess.cpp.o
-[169/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SplitLargeMeshes.cpp.o
-[170/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/StepExporter.cpp.o
-[171/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/TextureTransform.cpp.o
-[172/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/TriangulateProcess.cpp.o
-[173/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MakeVerboseFormat.cpp.o
-[174/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OptimizeMeshes.cpp.o
-[175/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MaterialSystem.cpp.o
-[176/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ValidateDataStructure.cpp.o
-[177/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/glTFImporter.cpp.o
-[178/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/3DSExporter.cpp.o
-[179/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ProcessHelper.cpp.o
-[180/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/DeboneProcess.cpp.o
-[181/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/glTF2Importer.cpp.o
-[182/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AMFImporter_Geometry.cpp.o
-[183/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AMFImporter_Material.cpp.o
-[184/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AssbinExporter.cpp.o
-[185/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AssbinLoader.cpp.o
-[186/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AssxmlExporter.cpp.o
-[187/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AMFImporter.cpp.o
-[188/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ColladaExporter.cpp.o
-[189/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/3DSConverter.cpp.o
-[190/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/CSMLoader.cpp.o
+[155/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FindDegenerates.cpp.o
+[156/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ComputeUVMappingProcess.cpp.o
+[157/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FindInstancesProcess.cpp.o
+[158/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/GenFaceNormalsProcess.cpp.o
+[159/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/RemoveVCProcess.cpp.o
+[160/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/CalcTangentsProcess.cpp.o
+[161/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/FindInvalidDataProcess.cpp.o
+[162/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/Subdivision.cpp.o
+[163/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/GenVertexNormalsProcess.cpp.o
+[164/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ImproveCacheLocality.cpp.o
+[165/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/RemoveRedundantMaterials.cpp.o
+[166/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/LimitBoneWeightsProcess.cpp.o
+[167/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/PretransformVertices.cpp.o
+[168/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/JoinVerticesProcess.cpp.o
+[169/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OptimizeGraph.cpp.o
+[170/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SortByPTypeProcess.cpp.o
+[171/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/StandardShapes.cpp.o
+[172/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/StepExporter.cpp.o
+[173/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/TriangulateProcess.cpp.o
+[174/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/TextureTransform.cpp.o
+[175/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OptimizeMeshes.cpp.o
+[176/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/SplitLargeMeshes.cpp.o
+[177/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ValidateDataStructure.cpp.o
+[178/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MakeVerboseFormat.cpp.o
+[179/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/3DSExporter.cpp.o
+[180/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MaterialSystem.cpp.o
+[181/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ProcessHelper.cpp.o
+[182/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/DeboneProcess.cpp.o
+[183/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AMFImporter_Geometry.cpp.o
+[184/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AMFImporter_Material.cpp.o
+[185/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AssbinExporter.cpp.o
+[186/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AMFImporter.cpp.o
+[187/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AssbinLoader.cpp.o
+[188/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/3DSConverter.cpp.o
+[189/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AssxmlExporter.cpp.o
+[190/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ColladaExporter.cpp.o
 [191/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/AMFImporter_Postprocess.cpp.o
 [192/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ACLoader.cpp.o
-[193/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BVHLoader.cpp.o
-[194/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/B3DImporter.cpp.o
-[195/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/HMPLoader.cpp.o
-[196/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/3DSLoader.cpp.o
-[197/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ASELoader.cpp.o
-[198/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IRRShared.cpp.o
-[199/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ASEParser.cpp.o
-[200/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IRRMeshLoader.cpp.o
-[201/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/LWOAnimation.cpp.o
-[202/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/DXFLoader.cpp.o
-[203/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/LWOBLoader.cpp.o
-[204/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MD2Loader.cpp.o
-[205/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/LWOMaterial.cpp.o
-[206/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MDCLoader.cpp.o
-[207/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IRRLoader.cpp.o
-[208/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MD5Loader.cpp.o
-[209/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MD3Loader.cpp.o
-[210/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/LWSLoader.cpp.o
-[211/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MDLMaterialLoader.cpp.o
+[193/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BlenderScene.cpp.o
+[194/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BVHLoader.cpp.o
+[195/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/3DSLoader.cpp.o
+[196/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ASELoader.cpp.o
+[197/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/HMPLoader.cpp.o
+[198/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/CSMLoader.cpp.o
+[199/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/B3DImporter.cpp.o
+[200/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IRRShared.cpp.o
+[201/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ASEParser.cpp.o
+[202/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/LWOAnimation.cpp.o
+[203/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IRRMeshLoader.cpp.o
+[204/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/LWOBLoader.cpp.o
+[205/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/DXFLoader.cpp.o
+[206/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MD2Loader.cpp.o
+[207/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/LWOMaterial.cpp.o
+[208/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MDCLoader.cpp.o
+[209/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IRRLoader.cpp.o
+[210/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MD5Loader.cpp.o
+[211/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MD3Loader.cpp.o
 [212/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ColladaLoader.cpp.o
-[213/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MD5Parser.cpp.o
-[214/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ObjExporter.cpp.o
-[215/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/NDOLoader.cpp.o
-[216/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MDLLoader.cpp.o
+[213/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/LWSLoader.cpp.o
+[214/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MDLMaterialLoader.cpp.o
+[215/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ObjExporter.cpp.o
+[216/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MD5Parser.cpp.o
+[217/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MDLLoader.cpp.o
 /Users/jason/AndroidStudioProjects/AndroidJniRender/app/src/main/thirdpartCpp/Assimp/code/MDLLoader.cpp:419:55: warning: taking address of packed member 'time' of class or structure 'Assimp::MDL::GroupFrame' may result in an unaligned pointer value [-Waddress-of-packed-member]
         pcFirstFrame = (BE_NCONST MDL::SimpleFrame*)(&pcFrames2->time + pcFrames->type);
                                                       ^~~~~~~~~~~~~~~
 1 warning generated.
-[217/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OFFLoader.cpp.o
-[218/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/LWOLoader.cpp.o
-[219/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OpenGEXExporter.cpp.o
-[220/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OgreImporter.cpp.o
-[221/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ObjFileImporter.cpp.o
-[222/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ObjFileMtlImporter.cpp.o
-[223/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/PlyExporter.cpp.o
-[224/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/NFFLoader.cpp.o
-[225/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ColladaParser.cpp.o
-[226/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ObjFileParser.cpp.o
-[227/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/PlyLoader.cpp.o
-[228/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OgreMaterial.cpp.o
-[229/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OgreStructs.cpp.o
-[230/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OpenGEXImporter.cpp.o
-[231/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/PlyParser.cpp.o
+[218/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OFFLoader.cpp.o
+[219/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/NDOLoader.cpp.o
+[220/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCReaderGen1.cpp.o
+[221/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/LWOLoader.cpp.o
+[222/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OgreImporter.cpp.o
+[223/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ObjFileImporter.cpp.o
+[224/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OpenGEXExporter.cpp.o
+[225/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/PlyExporter.cpp.o
+[226/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ObjFileMtlImporter.cpp.o
+[227/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/NFFLoader.cpp.o
+[228/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ColladaParser.cpp.o
+[229/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/ObjFileParser.cpp.o
+[230/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/PlyLoader.cpp.o
+[231/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OgreMaterial.cpp.o
 [232/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/MS3DLoader.cpp.o
-[233/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OgreBinarySerializer.cpp.o
-[234/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OgreXmlSerializer.cpp.o
-[235/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BlenderDNA.cpp.o
-[236/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BlenderBMesh.cpp.o
-[237/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/IFCReaderGen1.cpp.o
-[238/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/COBLoader.cpp.o
-[239/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BlenderLoader.cpp.o
-[240/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BlenderScene.cpp.o
+[233/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OgreStructs.cpp.o
+[234/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/PlyParser.cpp.o
+[235/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OpenGEXImporter.cpp.o
+[236/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OgreBinarySerializer.cpp.o
+[237/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BlenderDNA.cpp.o
+[238/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/OgreXmlSerializer.cpp.o
+[239/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/COBLoader.cpp.o
+[240/242] Building CXX object Assimp/code/CMakeFiles/assimp.dir/BlenderLoader.cpp.o
 [241/242] Linking CXX shared library /Users/jason/AndroidStudioProjects/AndroidJniRender/app/build/intermediates/cxx/MiaoMiaoDebug/401f114x/obj/arm64-v8a/libassimp.so
 [242/242] Linking CXX shared library /Users/jason/AndroidStudioProjects/AndroidJniRender/app/build/intermediates/cxx/MiaoMiaoDebug/401f114x/obj/arm64-v8a/libnative-lib.so
