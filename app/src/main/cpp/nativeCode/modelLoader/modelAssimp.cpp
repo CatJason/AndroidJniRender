@@ -5,6 +5,8 @@
 #include "../utils/assetManager.h"
 #include <opencv2/opencv.hpp>
 
+
+
 /**
  * 类构造函数
  */
@@ -33,37 +35,32 @@ ModelAssimp::~ModelAssimp() {
  * 执行初始化操作并将三角形的顶点/颜色加载到GLES中
  */
 void ModelAssimp::PerformGLInits() {
-
     GLConfigInit();
 
     assimpLoader = new AssimpLoader();
 
-    // extract the OBJ and companion files from assets
-    std::string objFilename;
-    gHelperObject->ExtractAssetReturnFilename("pinkfox/pinkFox.obj", objFilename);
+    // 使用数组来简化文件名的提取
+    const char* assetPaths[] = {
+            "pinkfox/pinkFox.obj",
+            "pinkfox/pinkFox.mtl",
+            "pinkfox/body.jpg",
+            "pinkfox/hair.jpg",
+            "pinkfox/skin.jpg",
+            "pinkfox/face.jpg"
+    };
 
-    std::string mtlFilename;
-    gHelperObject->ExtractAssetReturnFilename("pinkfox/pinkFox.mtl", mtlFilename);
+    std::vector<std::string> filenames(sizeof(assetPaths) / sizeof(assetPaths[0]));
 
-    std::string bodyFilename;
-    gHelperObject->ExtractAssetReturnFilename("pinkfox/body.jpg", bodyFilename);
+    for (int i = 0; i < sizeof(assetPaths) / sizeof(assetPaths[0]); ++i) {
+        gHelperObject->ExtractAssetReturnFilename(assetPaths[i], filenames[i]);
+    }
 
-    std::string hairFileName;
-    gHelperObject->ExtractAssetReturnFilename("pinkfox/hair.jpg", hairFileName);
-
-    std::string skinFileName;
-    gHelperObject->ExtractAssetReturnFilename("pinkfox/skin.jpg", skinFileName);
-
-    std::string faceFileName;
-    gHelperObject->ExtractAssetReturnFilename("pinkfox/face.jpg", faceFileName);
-
-    assimpLoader->Load3DModel(objFilename);
-
+    // 加载3D模型
+    assimpLoader->Load3DModel(filenames[0]);
 
     CheckGLError("ModelAssimp::PerformGLInits");
     initsDone = true;
 }
-
 
 /**
  * 渲染到显示屏
