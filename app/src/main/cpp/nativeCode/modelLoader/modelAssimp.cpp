@@ -45,6 +45,18 @@ void ModelAssimp::PerformGLInits() {
     std::string mtlFilename;
     gHelperObject->ExtractAssetReturnFilename("pinkfox/pinkFox.mtl", mtlFilename);
 
+    std::string bodyFilename;
+    gHelperObject->ExtractAssetReturnFilename("pinkfox/body.jpg", bodyFilename);
+
+    std::string hairFileName;
+    gHelperObject->ExtractAssetReturnFilename("pinkfox/hair.jpg", hairFileName);
+
+    std::string skinFileName;
+    gHelperObject->ExtractAssetReturnFilename("pinkfox/skin.jpg", skinFileName);
+
+    std::string faceFileName;
+    gHelperObject->ExtractAssetReturnFilename("pinkfox/face.jpg", faceFileName);
+
     assimpLoader->Load3DModel(objFilename);
 
 
