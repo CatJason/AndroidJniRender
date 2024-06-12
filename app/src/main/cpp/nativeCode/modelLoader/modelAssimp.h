@@ -43,6 +43,14 @@ private:
     std::vector<float> modelDefaultPosition;
     std::unique_ptr<GLCamera> myGLCamera;
     std::unique_ptr<AssimpLoader> assimpLoader;
+
+    void ClearScreen();
+
+    void RenderModel();
+
+    std::vector<std::string> LoadAssetPaths();
+
+    void InitializeModelDefaultPosition();
 };
 
 #endif // MODELASSIMP_H

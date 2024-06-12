@@ -3,6 +3,8 @@
 #include "../utils/assetManager.h"
 #include <opencv2/opencv.hpp>
 #include <memory>
+#include <vector>
+#include <algorithm>
 
 /**
  * 类构造函数
@@ -12,12 +14,16 @@ ModelAssimp::ModelAssimp()
           myGLCamera(std::make_unique<GLCamera>()),
           assimpLoader(nullptr) {
 
-    float pos[] = {0., 0., 0., 0.2, 0.5, 0.};
-    std::copy(&pos[0], &pos[5], std::back_inserter(modelDefaultPosition));
+    InitializeModelDefaultPosition();
     myGLCamera->SetModelPosition(modelDefaultPosition);
 }
 
 ModelAssimp::~ModelAssimp() = default;
+
+void ModelAssimp::InitializeModelDefaultPosition() {
+    float pos[] = {0.0f, 0.0f, 0.0f, 0.2f, 0.5f, 0.0f};
+    std::copy(pos, pos + 6, std::back_inserter(modelDefaultPosition));
+}
 
 /**
  * 执行初始化操作并将三角形的顶点/颜色加载到GLES中
@@ -27,20 +33,7 @@ void ModelAssimp::PerformGLInits() {
 
     assimpLoader = std::make_unique<AssimpLoader>();
 
-    const char* assetPaths[] = {
-            "pinkfox/pinkFox.obj",
-            "pinkfox/pinkFox.mtl",
-            "pinkfox/body.jpg",
-            "pinkfox/hair.jpg",
-            "pinkfox/skin.jpg",
-            "pinkfox/face.jpg"
-    };
-
-    std::vector<std::string> filenames(std::begin(assetPaths), std::end(assetPaths));
-
-    for (auto& filename : filenames) {
-        gHelperObject->ExtractAssetReturnFilename(filename.c_str(), filename);
-    }
+    std::vector<std::string> filenames = LoadAssetPaths();
 
     // 加载3D模型
     assimpLoader->Load3DModel(filenames[0]);
@@ -49,17 +42,44 @@ void ModelAssimp::PerformGLInits() {
     initsDone = true;
 }
 
+std::vector<std::string> ModelAssimp::LoadAssetPaths() {
+    const std::vector<const char*> assetPaths = {
+            "pinkfox/pinkFox.obj",
+            "pinkfox/pinkFox.mtl",
+            "pinkfox/body.jpg",
+            "pinkfox/hair.jpg",
+            "pinkfox/skin.jpg",
+            "pinkfox/face.jpg"
+    };
+
+    std::vector<std::string> filenames;
+    filenames.reserve(assetPaths.size());
+
+    for (const auto& path : assetPaths) {
+        std::string filename;
+        gHelperObject->ExtractAssetReturnFilename(path, filename);
+        filenames.push_back(filename);
+    }
+
+    return filenames;
+}
+
 /**
  * 渲染到显示屏
  */
 void ModelAssimp::Render() {
-    // 清除屏幕
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    ClearScreen();
+    RenderModel();
+    CheckGLError("ModelAssimp::Render");
+}
 
+void ModelAssimp::ClearScreen() {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+void ModelAssimp::RenderModel() {
     glm::mat4 mvpMat = myGLCamera->GetMVP();
     assimpLoader->Render3DModel(&mvpMat);
-
-    CheckGLError("ModelAssimp::Render");
 }
 
 /**
@@ -69,7 +89,7 @@ void ModelAssimp::SetViewport(int width, int height) {
     screenHeight = height;
     screenWidth = width;
     glViewport(0, 0, width, height);
-    CheckGLError("Cube::SetViewport");
+    CheckGLError("ModelAssimp::SetViewport");
 
     myGLCamera->SetAspectRatio(static_cast<float>(width) / height);
 }
