@@ -1,35 +1,23 @@
 #include "modelAssimp.h"
-
-
 #include "assimp/Importer.hpp"
 #include "../utils/assetManager.h"
 #include <opencv2/opencv.hpp>
-
-
+#include <memory>
 
 /**
  * 类构造函数
  */
-ModelAssimp::ModelAssimp() {
-    initsDone = false;
+ModelAssimp::ModelAssimp()
+        : initsDone(false),
+          myGLCamera(std::make_unique<GLCamera>()),
+          assimpLoader(nullptr) {
 
-    // 创建GLCamera对象，并设置对象的默认位置
-    myGLCamera = new GLCamera();
     float pos[] = {0., 0., 0., 0.2, 0.5, 0.};
     std::copy(&pos[0], &pos[5], std::back_inserter(modelDefaultPosition));
     myGLCamera->SetModelPosition(modelDefaultPosition);
-
-    assimpLoader = nullptr;
 }
 
-ModelAssimp::~ModelAssimp() {
-    if (myGLCamera) {
-        delete myGLCamera;
-    }
-    if (assimpLoader) {
-        delete assimpLoader;
-    }
-}
+ModelAssimp::~ModelAssimp() = default;
 
 /**
  * 执行初始化操作并将三角形的顶点/颜色加载到GLES中
@@ -37,9 +25,8 @@ ModelAssimp::~ModelAssimp() {
 void ModelAssimp::PerformGLInits() {
     GLConfigInit();
 
-    assimpLoader = new AssimpLoader();
+    assimpLoader = std::make_unique<AssimpLoader>();
 
-    // 使用数组来简化文件名的提取
     const char* assetPaths[] = {
             "pinkfox/pinkFox.obj",
             "pinkfox/pinkFox.mtl",
@@ -49,10 +36,10 @@ void ModelAssimp::PerformGLInits() {
             "pinkfox/face.jpg"
     };
 
-    std::vector<std::string> filenames(sizeof(assetPaths) / sizeof(assetPaths[0]));
+    std::vector<std::string> filenames(std::begin(assetPaths), std::end(assetPaths));
 
-    for (int i = 0; i < sizeof(assetPaths) / sizeof(assetPaths[0]); ++i) {
-        gHelperObject->ExtractAssetReturnFilename(assetPaths[i], filenames[i]);
+    for (auto& filename : filenames) {
+        gHelperObject->ExtractAssetReturnFilename(filename.c_str(), filename);
     }
 
     // 加载3D模型
@@ -66,14 +53,13 @@ void ModelAssimp::PerformGLInits() {
  * 渲染到显示屏
  */
 void ModelAssimp::Render() {
-    // clear the screen
+    // 清除屏幕
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glm::mat4 mvpMat = myGLCamera->GetMVP();
     assimpLoader->Render3DModel(&mvpMat);
 
     CheckGLError("ModelAssimp::Render");
-
 }
 
 /**
@@ -85,9 +71,8 @@ void ModelAssimp::SetViewport(int width, int height) {
     glViewport(0, 0, width, height);
     CheckGLError("Cube::SetViewport");
 
-    myGLCamera->SetAspectRatio((float) width / height);
+    myGLCamera->SetAspectRatio(static_cast<float>(width) / height);
 }
-
 
 /**
  * 在双击操作中重置模型的位置。
