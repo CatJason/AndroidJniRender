@@ -1,75 +1,64 @@
-#ifndef ASSIMPLOADER_H
-#define ASSIMPLOADER_H
+#ifndef ASSIMP_LOADER_H
+#define ASSIMP_LOADER_H
 
-#include <map>
-#include <vector>
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
+#include <string>
+#include <unordered_map>
+#include <vector>
+#include <GLES2/gl2.h>
+#include <memory>
+#include "../../../thirdpartCpp/glm/detail/type_mat.hpp"
 
-#include "../gl/myGLM.h"
-#include "../gl/GLManager.h"
-
-// 用于渲染网格的信息
 struct MeshInfo {
-    GLuint  textureIndex;
-    int     numberOfFaces;
-    GLuint  faceBuffer;
-    GLuint  vertexBuffer;
-    GLuint  textureCoordBuffer;
+    GLuint vertexBuffer;
+    GLuint textureCoordBuffer;
+    GLuint faceBuffer;
+    unsigned int numberOfFaces;
+    unsigned int textureIndex;
 };
 
 class AssimpLoader {
-
 public:
     AssimpLoader();
     ~AssimpLoader();
 
-    void Render3DModel(glm::mat4 *MVP);
     bool Load3DModel(const std::string& modelFilename);
     void Delete3DModel();
+    void Render3DModel(glm::mat4* mvpMat);
 
 private:
+    void BuildFaceBuffer(const aiMesh* mesh, MeshInfo& meshInfo);
+    void BuildVertexBuffer(const aiMesh* mesh, MeshInfo& meshInfo);
+    void BuildTextureCoordBuffer(const aiMesh* mesh, MeshInfo& meshInfo);
+    void BindBuffers();
+    void BuildTextureIndex(const aiMesh* mesh, MeshInfo& meshInfo);
     void BuildGLBuffers();
+    void ExtractTextureFilenames();
+    void GenerateTextureGLNames(int numTextures, GLuint*& textureGLNames);
+    void LoadTextureImages(const std::string& modelDirectoryName, GLuint* textureGLNames);
+    void SetTextureParameters();
     bool LoadTexturesToGL(std::string modelFilename);
+    void ClearBuffers();
+    void UseShaderProgram();
+    void SetModelViewProjectionMatrix(const glm::mat4* mvpMat);
+    void SetActiveTextureUnit();
+    void SetTextureSamplerUniform();
+    void RenderMeshes();
 
-    std::vector<struct MeshInfo> modelMeshes;       // 包含模型中每个网格的结构体
-    Assimp::Importer *importerPtr;
-    const aiScene* scene;                           // assimp的输出数据结构
+    std::unique_ptr<Assimp::Importer> importerPtr; // 使用智能指针管理 Assimp::Importer
+    const aiScene* scene;
     bool isObjectLoaded;
 
-    std::map<std::string, GLuint> textureNameMap;   // (纹理文件名, GL中的纹理名称)
+    std::unordered_map<std::string, unsigned int> textureNameMap;
+    std::vector<MeshInfo> modelMeshes;
 
-    GLuint  vertexAttribute, vertexUVAttribute;     // 着色器变量的属性
-    GLuint  shaderProgramID;
-    GLint   mvpLocation, textureSamplerLocation;    // 着色器中MVP的位置
-    void BindBuffers();
-
-    void BuildFaceBuffer(const aiMesh *mesh, MeshInfo &meshInfo);
-
-    void BuildVertexBuffer(const aiMesh *mesh, MeshInfo &meshInfo);
-
-    void BuildTextureCoordBuffer(const aiMesh *mesh, MeshInfo &meshInfo);
-
-    void BuildTextureIndex(const aiMesh *mesh, MeshInfo &meshInfo);
-
-    void GenerateTextureGLNames(int numTextures, GLuint *&textureGLNames);
-
-    void ExtractTextureFilenames();
-
-    void LoadTextureImages(const std::string &modelDirectoryName, GLuint *textureGLNames);
-
-    void ClearBuffers();
-
-    void UseShaderProgram();
-
-    void SetModelViewProjectionMatrix(const glm::mat4 *mvpMat);
-
-    void SetActiveTextureUnit();
-
-    void SetTextureSamplerUniform();
-
-    void RenderMeshes();
+    GLuint shaderProgramID;
+    GLint vertexAttribute;
+    GLint vertexUVAttribute;
+    GLint mvpLocation;
+    GLint textureSamplerLocation;
 };
 
-#endif // ASSIMPLOADER_H
+#endif // ASSIMP_LOADER_H
