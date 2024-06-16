@@ -17,6 +17,7 @@ bool ReadShaderCode(std::string &shaderCode, std::string &shaderFileName) {
     // 使用MyJNIHelper从assets中读取着色器代码
     bool isFilePresent = gHelperObject->ExtractAssetReturnFilename(shaderFileName, shaderFileName);
     if (!isFilePresent) {
+        MyLOGE("着色器文件不存在：%s", shaderFileName.c_str());
         return false;
     }
 
@@ -34,7 +35,7 @@ bool ReadShaderCode(std::string &shaderCode, std::string &shaderFileName) {
         return false;
     }
 
-    MyLOGI("读取成功");
+    MyLOGI("着色器读取成功：%s", shaderFileName.c_str());
     return true;
 }
 
@@ -57,7 +58,7 @@ bool CompileShader(GLuint &shaderID, const GLenum shaderType, std::string shader
     shaderID = glCreateShader(shaderType);
 
     // 编译着色器
-    MyLOGI("正在编译着色器");
+    MyLOGI("正在编译着色器类型：%d", shaderType);
     // 将 shaderCode.c_str() 的指针赋值给 sourcePointer，这里使用了 const char* 类型
     char const *sourcePointer = shaderCode.c_str();
     // 将着色器源码指针传递给着色器对象
@@ -72,10 +73,10 @@ bool CompileShader(GLuint &shaderID, const GLenum shaderType, std::string shader
     glGetShaderiv(shaderID, GL_COMPILE_STATUS, &result);
     glGetShaderiv(shaderID, GL_INFO_LOG_LENGTH, &infoLogLength);
     if (result == 0) {
-        MyLOGI("着色器编译失败");
+        MyLOGE("着色器编译失败");
         std::vector<char> shaderErrorMessage(infoLogLength + 1);
         glGetShaderInfoLog(shaderID, infoLogLength, nullptr, &shaderErrorMessage[0]);
-        MyLOGI("%s", &shaderErrorMessage[0]);
+        MyLOGE("%s", &shaderErrorMessage[0]);
         return false;
     } else {
         MyLOGI("着色器编译成功");
@@ -119,11 +120,10 @@ bool LinkProgram(
     }
 
     if (result == 0) {
-        MyLOGI("链接程序失败：%d", programID);
+        MyLOGE("链接程序失败：%d", programID);
         std::vector<char> programErrorMessage(infoLogLength + 1);
-        glGetProgramInfoLog(programID, infoLogLength, nullptr,
-                            &programErrorMessage[0]);
-        MyLOGI("%s", &programErrorMessage[0]);
+        glGetProgramInfoLog(programID, infoLogLength, nullptr, &programErrorMessage[0]);
+        MyLOGE("%s", &programErrorMessage[0]);
         if (programID) {
             glDeleteProgram(programID);
         }
@@ -187,6 +187,7 @@ GLuint LoadShaders(
  * @return 属性的位置（标识符），如果获取失败则返回0
  */
 GLuint GetAttributeLocation(GLuint programID, std::string variableName) {
+    MyLOGI("获取属性位置：%s", variableName.c_str());
     GLint loc = glGetAttribLocation(programID, variableName.c_str());
     if (loc == -1) {
         MyLOGF("获取属性失败：%s", variableName.c_str());
@@ -204,6 +205,7 @@ GLuint GetAttributeLocation(GLuint programID, std::string variableName) {
  * @return uniform 变量的位置，如果获取失败返回 -1
  */
 GLint GetUniformLocation(GLuint programID, std::string uniformName) {
+    MyLOGI("获取uniform位置：%s", uniformName.c_str());
     GLint loc = glGetUniformLocation(programID, uniformName.c_str());
     if (loc == -1) {
         MyLOGF("获取uniform失败：%s", uniformName.c_str());
