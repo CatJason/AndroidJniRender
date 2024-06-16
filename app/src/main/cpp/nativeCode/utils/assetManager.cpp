@@ -17,6 +17,7 @@ AssetManagerUtils::AssetManagerUtils(
         jobject assetManager,
         jstring pathToInternalDir
 ) {
+    MyLOGI("AssetManagerUtils::AssetManagerUtils - 构造函数初始化");
     // 构造函数，接收JNIEnv指针、jobject对象、assetManager对象和pathToInternalDir字符串作为参数
 
     // 获取asset manager的本地实例
@@ -39,6 +40,7 @@ AssetManagerUtils::AssetManagerUtils(
 }
 
 AssetManagerUtils::~AssetManagerUtils() {
+    MyLOGI("AssetManagerUtils::~AssetManagerUtils - 析构函数调用");
     // 析构函数，用于清理资源和对象的销毁
 
     // 销毁互斥锁对象
@@ -53,8 +55,8 @@ AssetManagerUtils::~AssetManagerUtils() {
 * @param checkIfFileIsAvailable 是否检查文件是否可用
 * @return 提取是否成功的布尔值，true表示成功提取文件，false表示提取失败
 */
-
 bool AssetManagerUtils::ExtractAssetReturnFilename(std::string assetName, bool checkIfFileIsAvailable) {
+    MyLOGI("AssetManagerUtils::ExtractAssetReturnFilename - 提取资产文件：%s", assetName.c_str());
     std::string filename;
     return ExtractAssetReturnFilename(assetName, filename, checkIfFileIsAvailable);
 }
@@ -64,6 +66,7 @@ bool AssetManagerUtils::ExtractAssetReturnFilename(
         std::string &filename,
         bool checkIfFileIsAvailable
 ) {
+    MyLOGI("AssetManagerUtils::ExtractAssetReturnFilename - 提取资产文件：%s", assetName.c_str());
     filename = apkInternalPath + "/" + ExtractFileName(assetName);
     FILE *file = fopen(filename.c_str(), "rb");
     if (file && checkIfFileIsAvailable) {
@@ -80,6 +83,7 @@ bool AssetManagerUtils::ExtractAssetReturnFilename(
     // 打开文件
     AAsset *asset = AAssetManager_open(apkAssetManager, assetName.c_str(), AASSET_MODE_STREAMING);
     if (asset != nullptr) {
+        MyLOGI("AssetManagerUtils::ExtractAssetReturnFilename - 资产文件打开成功：%s", assetName.c_str());
         char buf[BUFSIZ];
         int nb_read = 0;
         // 打开文件以便写入提取的资源数据

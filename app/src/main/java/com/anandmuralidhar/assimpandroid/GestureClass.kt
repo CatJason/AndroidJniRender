@@ -1,23 +1,9 @@
-/*
- *    Copyright 2016 Anand Muralidhar
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 package com.anandmuralidhar.assimpandroid
 
 import android.R.attr.action
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.util.Log
 import android.view.GestureDetector.SimpleOnGestureListener
 import android.view.MotionEvent
 import android.view.ScaleGestureDetector
@@ -26,7 +12,6 @@ import android.view.View
 import android.view.View.OnTouchListener
 import androidx.core.view.GestureDetectorCompat
 import androidx.core.view.MotionEventCompat
-
 
 class GestureClass(activity: Activity) {
     // 实例化两个监听器，用于检测双击/拖动和缩放手势
@@ -54,6 +39,7 @@ class GestureClass(activity: Activity) {
 
         @SuppressLint("ClickableViewAccessibility")
         override fun onTouch(v: View, event: MotionEvent): Boolean {
+            Log.d("GestureClass", "onTouch: 触摸事件 $event")
             mTapScrollDetector.onTouchEvent(event)
             mScaleDetector.onTouchEvent(event)
 
@@ -67,10 +53,12 @@ class GestureClass(activity: Activity) {
                         val dy = y - mLastTouchY
                         mLastTouchX = x
                         mLastTouchY = y
+                        Log.d("GestureClass", "onTouch: 两指移动 dx=$dx, dy=$dy")
                         MoveNative(dx, dy)
                     }
                 }
                 MotionEvent.ACTION_UP, MotionEvent.ACTION_POINTER_UP, MotionEvent.ACTION_CANCEL -> {
+                    Log.d("GestureClass", "onTouch: 触摸事件结束或取消")
                     mTwoFingerPointerId = INVALID_POINTER_ID
                 }
                 MotionEvent.ACTION_POINTER_DOWN -> {
@@ -79,6 +67,7 @@ class GestureClass(activity: Activity) {
                     val y = event.getY(mTwoFingerPointerId)
                     mLastTouchX = x
                     mLastTouchY = y
+                    Log.d("GestureClass", "onTouch: 两指按下 x=$x, y=$y")
                 }
             }
 
@@ -89,6 +78,7 @@ class GestureClass(activity: Activity) {
     // 此类检测双击手势并跟踪单指拖动手势
     internal inner class MyTapScrollListener : SimpleOnGestureListener() {
         override fun onDoubleTap(event: MotionEvent): Boolean {
+            Log.d("GestureClass", "onDoubleTap: 双击事件")
             DoubleTapNative()
             return true
         }
@@ -102,6 +92,7 @@ class GestureClass(activity: Activity) {
             distanceY: Float
         ): Boolean {
             if (mTwoFingerPointerId == INVALID_POINTER_ID) {
+                Log.d("GestureClass", "onScroll: 单指滚动 distanceX=$distanceX, distanceY=$distanceY, x=${e2.x}, y=${e2.y}")
                 ScrollNative(distanceX, distanceY, e2.x, e2.y)
             }
             return true
@@ -111,6 +102,7 @@ class GestureClass(activity: Activity) {
     // 此类检测捏和缩放手势
     private inner class ScaleListener : SimpleOnScaleGestureListener() {
         override fun onScale(detector: ScaleGestureDetector): Boolean {
+            Log.d("GestureClass", "onScale: 缩放手势 scaleFactor=${detector.scaleFactor}")
             ScaleNative(detector.scaleFactor)
             return true
         }

@@ -31,14 +31,13 @@ internal class MyGLSurfaceView(context: Context?, attrs: AttributeSet?) :
             // 创建GLES上下文。即使我们指定了OpenGL ES 2，它将尝试在手机上创建最高可能的上下文
             setEGLContextClientVersion(2)
 
-            // 设置我们自定义的Renderer用于在创建的SurfaceView上绘
+            // 设置我们自定义的Renderer用于在创建的SurfaceView上绘图
             setRenderer(mRenderer)
 
             // 连续调用onDrawFrame(...)
-            //设置渲染模式为RENDERMODE_CONTINUOUSLY，即连续渲染模式。在此模式下，渲染器将被重复调用以持续重新渲染场景。
+            // 设置渲染模式为RENDERMODE_CONTINUOUSLY，即连续渲染模式。在此模式下，渲染器将被重复调用以持续重新渲染场景。
             renderMode = RENDERMODE_CONTINUOUSLY
         } catch (e: Exception) {
-
             // 出现问题，出错了！
             Log.e("MyGLSurfaceView", "无法创建GLES上下文！", e)
         }

@@ -13,17 +13,21 @@
  */
 GLCamera::GLCamera(float FOV, float zPosition, float nearPlaneDistance, float farPlaneDistance) {
     MyLOGF("GLCamera::GLCamera");
+    MyLOGF("GLCamera::GLCamera - 初始化相机");
     glm::vec3 cameraPosition = glm::vec3(0, 0, zPosition);
 
+    // 设置视图矩阵
     viewMat = glm::lookAt(cameraPosition, glm::vec3(0, 0, -1), glm::vec3(0, 1, 0));
 
     this->nearPlaneDistance = nearPlaneDistance;
     this->farPlaneDistance = farPlaneDistance;
     this->FOV = FOV;
 
+    // 初始化位置增量和模型四元数
     deltaX = deltaY = deltaZ = 0;
     modelQuaternion = glm::quat(glm::vec3(0, 0, 0));
 
+    // 初始化矩阵
     modelMat = glm::mat4(1.0f);
     translateMat = glm::mat4(1.0f);
     rotateMat = glm::mat4(1.0f);
@@ -36,6 +40,7 @@ GLCamera::GLCamera(float FOV, float zPosition, float nearPlaneDistance, float fa
  */
 void GLCamera::SetAspectRatio(float aspect) {
     MyLOGF("GLCamera::SetAspectRatio");
+    MyLOGF("GLCamera::SetAspectRatio - 设置纵横比: %f", aspect);
     glm::mat4 projectionMat;
     projectionMat = glm::perspective(FOV * float(M_PI / 180), aspect, nearPlaneDistance, farPlaneDistance);
     projectionViewMat = projectionMat * viewMat;
@@ -49,6 +54,8 @@ void GLCamera::SetAspectRatio(float aspect) {
  */
 void GLCamera::SetModelPosition(std::vector<float> modelPosition) {
     MyLOGF("GLCamera::SetModelPosition");
+    MyLOGF("GLCamera::SetModelPosition - 设置模型位置: x=%f, y=%f, z=%f, pitch=%f, yaw=%f, roll=%f",
+           modelPosition[0], modelPosition[1], modelPosition[2], modelPosition[3], modelPosition[4], modelPosition[5]);
     UpdatePosition(modelPosition[0], modelPosition[1], modelPosition[2]);
     UpdateRotation(modelPosition[3], modelPosition[4], modelPosition[5]);
     ComputeMVPMatrix();
@@ -61,6 +68,7 @@ void GLCamera::SetModelPosition(std::vector<float> modelPosition) {
  * 更新模型的位置
  */
 void GLCamera::UpdatePosition(float x, float y, float z) {
+    MyLOGF("GLCamera::UpdatePosition - 更新位置: x=%f, y=%f, z=%f", x, y, z);
     deltaX = x;
     deltaY = y;
     deltaZ = z;
@@ -73,6 +81,7 @@ void GLCamera::UpdatePosition(float x, float y, float z) {
  * 更新模型的旋转
  */
 void GLCamera::UpdateRotation(float pitch, float yaw, float roll) {
+    MyLOGF("GLCamera::UpdateRotation - 更新旋转: pitch=%f, yaw=%f, roll=%f", pitch, yaw, roll);
     modelQuaternion = glm::quat(glm::vec3(pitch, yaw, roll));
     rotateMat = glm::toMat4(modelQuaternion);
 }
@@ -83,7 +92,7 @@ void GLCamera::UpdateRotation(float pitch, float yaw, float roll) {
  * MVP = Projection * View * (Translation * Rotation)
  */
 void GLCamera::ComputeMVPMatrix() {
-    MyLOGF("myGLCamera GLCamera::ComputeMVPMatrix");
+    MyLOGF("GLCamera::ComputeMVPMatrix - 计算MVP矩阵");
     translateMat = glm::mat4(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, deltaX, deltaY, deltaZ, 1);
 
     modelMat = translateMat * rotateMat;
@@ -96,7 +105,7 @@ void GLCamera::ComputeMVPMatrix() {
  * 通过沿Z轴推拉模型来模拟缩放的变化
  */
 void GLCamera::ScaleModel(float scaleFactor) {
-    MyLOGF("myGLCamera GLCamera::ScaleModel");
+    MyLOGF("GLCamera::ScaleModel - 缩放模型: scaleFactor=%f", scaleFactor);
     deltaZ += SCALE_TO_Z_TRANSLATION * (scaleFactor - 1);
     ComputeMVPMatrix();
 }
@@ -109,6 +118,8 @@ void GLCamera::ScaleModel(float scaleFactor) {
  * 模拟模型旋转的变化，拖动操作转换为模型旋转，计算旋转轴和角度并更新旋转矩阵
  */
 void GLCamera::RotateModel(float distanceX, float distanceY, float endPositionX, float endPositionY) {
+    MyLOGF("GLCamera::RotateModel - 旋转模型: distanceX=%f, distanceY=%f, endPositionX=%f, endPositionY=%f",
+           distanceX, distanceY, endPositionX, endPositionY);
     glm::vec3 endVec = CalculateEndVector(endPositionX, endPositionY);
     glm::vec3 beginVec = CalculateBeginVector(distanceX, distanceY, endPositionX, endPositionY);
 
@@ -128,6 +139,7 @@ void GLCamera::RotateModel(float distanceX, float distanceY, float endPositionX,
  * @return 归一化后的结束向量
  */
 glm::vec3 GLCamera::CalculateEndVector(float endPositionX, float endPositionY) {
+    MyLOGF("GLCamera::CalculateEndVector - 计算结束向量: endPositionX=%f, endPositionY=%f", endPositionX, endPositionY);
     float positionZ = CalculatePositionZ(endPositionX, endPositionY);
     return CreateNormalizedVector(endPositionX, endPositionY, positionZ);
 }
@@ -141,6 +153,8 @@ glm::vec3 GLCamera::CalculateEndVector(float endPositionX, float endPositionY) {
  * @return 归一化后的开始向量
  */
 glm::vec3 GLCamera::CalculateBeginVector(float distanceX, float distanceY, float& endPositionX, float& endPositionY) {
+    MyLOGF("GLCamera::CalculateBeginVector - 计算开始向量: distanceX=%f, distanceY=%f, endPositionX=%f, endPositionY=%f",
+           distanceX, distanceY, endPositionX, endPositionY);
     endPositionX += distanceX;
     endPositionY += distanceY;
     float positionZ = CalculatePositionZ(endPositionX, endPositionY);
@@ -153,6 +167,7 @@ glm::vec3 GLCamera::CalculateBeginVector(float distanceX, float distanceY, float
  * 通过改变模型的x-y坐标来移动模型
  */
 void GLCamera::TranslateModel(float distanceX, float distanceY) {
+    MyLOGF("GLCamera::TranslateModel - 平移模型: distanceX=%f, distanceY=%f", distanceX, distanceY);
     deltaX += XY_TRANSLATION_FACTOR * distanceX;
     deltaY += XY_TRANSLATION_FACTOR * distanceY;
     ComputeMVPMatrix();
@@ -165,6 +180,7 @@ void GLCamera::TranslateModel(float distanceX, float distanceY) {
  * @return 计算后的Z坐标
  */
 float CalculatePositionZ(float endPositionX, float endPositionY) {
+    MyLOGF("CalculatePositionZ - 计算位置Z: endPositionX=%f, endPositionY=%f", endPositionX, endPositionY);
     float dist = sqrt(fmin(1, endPositionX * endPositionX + endPositionY * endPositionY));
     return sqrt(1 - dist * dist);
 }
@@ -177,6 +193,7 @@ float CalculatePositionZ(float endPositionX, float endPositionY) {
  * @return 归一化后的向量
  */
 glm::vec3 CreateNormalizedVector(float x, float y, float z) {
+    MyLOGF("CreateNormalizedVector - 创建归一化向量: x=%f, y=%f, z=%f", x, y, z);
     glm::vec3 vec = glm::vec3(x, y, z);
     return glm::normalize(vec);
 }
@@ -188,6 +205,7 @@ glm::vec3 CreateNormalizedVector(float x, float y, float z) {
  * @return 计算后的旋转轴
  */
 glm::vec3 CalculateRotationAxis(const glm::vec3& beginVec, const glm::vec3& endVec) {
+    MyLOGF("CalculateRotationAxis - 计算旋转轴");
     return glm::normalize(glm::cross(beginVec, endVec));
 }
 
@@ -198,6 +216,7 @@ glm::vec3 CalculateRotationAxis(const glm::vec3& beginVec, const glm::vec3& endV
  * @return 计算后的旋转角度
  */
 float CalculateRotationAngle(const glm::vec3& beginVec, const glm::vec3& endVec) {
+    MyLOGF("CalculateRotationAngle - 计算旋转角度");
     float dotProduct = fmax(fmin(glm::dot(beginVec, endVec), 1.), -1.);
     return TRANSLATION_TO_ANGLE * acos(dotProduct);
 }
@@ -209,5 +228,6 @@ float CalculateRotationAngle(const glm::vec3& beginVec, const glm::vec3& endVec)
  * @return 创建的四元数
  */
 glm::quat CreateQuaternion(float angle, const glm::vec3& axis) {
+    MyLOGF("CreateQuaternion - 创建四元数: angle=%f", angle);
     return glm::angleAxis(angle, axis);
 }
