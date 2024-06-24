@@ -20,7 +20,7 @@ public:
      */
     GLCamera(
             float FOV = 45,          // 视野角度，以度为单位
-            float zPosition = 10,    // 相机在Z轴上的位置
+            float zPosition = 100,    // 相机在Z轴上的位置
             float nearPlaneDistance = 1.0f, // 近裁剪面距离
             float farPlaneDistance = 2000.0f // 远裁剪面距离
     );
