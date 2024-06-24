@@ -35,6 +35,7 @@ public:
 
     int GetScreenWidth() const { return screenWidth; }
     int GetScreenHeight() const { return screenHeight; }
+    void UpdateRotation();
 
 private:
     bool initsDone;
@@ -43,6 +44,8 @@ private:
     std::vector<float> modelDefaultPosition;
     std::unique_ptr<GLCamera> myGLCamera;
     std::unique_ptr<AssimpLoader> assimpLoader;
+    float rotationAngle; // 声明 rotationAngle;
+    glm::mat4 modelMatrix;
 
     void ClearScreen();
 
@@ -51,6 +54,7 @@ private:
     std::vector<std::string> LoadAssetPaths();
 
     void InitializeModelDefaultPosition();
+
 };
 
 #endif // MODELASSIMP_H
