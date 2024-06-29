@@ -1,5 +1,5 @@
 #include <jni.h> // 引入JNI头文件，用于实现Java与本地C/C++代码之间的互操作性。
-#include "../nativeCode/modelLoader/modelAssimp.h" // 引入Assimp模型加载功能的特定头文件。
+#include "../nativeCode/modelLoader/assimpPinkFoxModel.h" // 引入Assimp模型加载功能的特定头文件。
 
 #ifdef __cplusplus
 extern "C" { // 确保与C语言的兼容性，因为JNI使用C语言命名和链接约定。

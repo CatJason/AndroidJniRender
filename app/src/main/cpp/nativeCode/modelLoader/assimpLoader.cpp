@@ -1,7 +1,7 @@
-#include "assimpLoader.h"
-#include "../shader/shaderLoader.h"
-#include "../utils/fileUtils.h"
-#include "../utils/logUtils.h"
+#include <assimpLoader.h>
+#include <shader/shaderLoader.h>
+#include <utils/fileUtils.h>
+#include <utils/logUtils.h>
 #include <opencv2/opencv.hpp>
 #include <utility>
 #include <memory>

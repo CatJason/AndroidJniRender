@@ -1,6 +1,6 @@
-#include "modelAssimp.h"
-#include "assimp/Importer.hpp"
-#include "../utils/assetManager.h"
+#include <assimpPinkFoxModel.h>
+#include <assimp/Importer.hpp>
+#include <utils/assetManager.h>
 #include <opencv2/opencv.hpp>
 #include <memory>
 #include <vector>

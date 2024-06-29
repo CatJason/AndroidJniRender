@@ -1,49 +1,65 @@
 cmake_minimum_required(VERSION 3.4.1)
 
+# Define variables for common paths
+set(JNI_CALLS_DIR ${CMAKE_SOURCE_DIR}/../cpp/jniCalls)
+set(NATIVE_CODE_DIR ${CMAKE_SOURCE_DIR}/../cpp/nativeCode)
+set(MODEL_LOADER_DIR ${NATIVE_CODE_DIR}/modelLoader)
+set(UTILS_DIR ${NATIVE_CODE_DIR}/utils)
+set(CAMERA_DIR ${NATIVE_CODE_DIR}/camera)
+set(GL_DIR ${NATIVE_CODE_DIR}/gl)
+set(SHADER_DIR ${NATIVE_CODE_DIR}/shader)
+set(GLM_DIR ${CMAKE_SOURCE_DIR}/glm)
+
+# Add the native library
 add_library(
         native-lib
         SHARED
-        ../cpp/jniCalls/assimpActivity.cpp
-        ../cpp/jniCalls/gestureClass.cpp
-        ../cpp/jniCalls/myGLRenderer.cpp
-        ../cpp/nativeCode/modelLoader/assimpLoader.cpp
-        ../cpp/nativeCode/modelLoader/assimpLoader.h
-        ../cpp/nativeCode/utils/fileUtils.cpp
-        ../cpp/nativeCode/utils/fileUtils.h
-        ../cpp/nativeCode/camera/GLCamera.cpp
-        ../cpp/nativeCode/camera/GLCamera.h
-        ../cpp/nativeCode/gl/GLManager.cpp
-        ../cpp/nativeCode/gl/GLManager.h
-        ../cpp/nativeCode/gl/myGLM.h
-        ../cpp/nativeCode/utils/assetManager.cpp
-        ../cpp/nativeCode/utils/assetManager.h
-        ../cpp/nativeCode/utils/logUtils.h
-        ../cpp/nativeCode/shader/shaderLoader.cpp
-        ../cpp/nativeCode/shader/shaderLoader.h
-        ../cpp/nativeCode/modelLoader/modelAssimp.cpp
-        ../cpp/nativeCode/modelLoader/modelAssimp.h
+        ${JNI_CALLS_DIR}/assimpActivity.cpp
+        ${JNI_CALLS_DIR}/gestureClass.cpp
+        ${JNI_CALLS_DIR}/myGLRenderer.cpp
+        ${MODEL_LOADER_DIR}/assimpLoader.cpp
+        ${UTILS_DIR}/fileUtils.cpp
+        ${CAMERA_DIR}/GLCamera.cpp
+        ${GL_DIR}/GLManager.cpp
+        ${UTILS_DIR}/assetManager.cpp
+        ${SHADER_DIR}/shaderLoader.cpp
+        ${MODEL_LOADER_DIR}/assimpPinkFoxModel.cpp
 )
 
+# Include directories
+target_include_directories(native-lib PRIVATE
+        ${NATIVE_CODE_DIR}
+        ${NATIVE_CODE_DIR}/modelLoader
+        ${NATIVE_CODE_DIR}/utils
+        ${NATIVE_CODE_DIR}/camera
+        ${NATIVE_CODE_DIR}/gl
+        ${NATIVE_CODE_DIR}/shader
+        ${GLM_DIR}
+        ${GLM_DIR}/gtc
+        ${GLM_DIR}/gtx
+        ${GLM_DIR}/detail
+)
+
+# Find libraries
 find_library(log-lib log)
 
-aux_source_directory(${CMAKE_SOURCE_DIR}/glm/ GLM)
-aux_source_directory(${GLM}/gtc GTC)
-aux_source_directory(${GLM}/gtx GTX)
-aux_source_directory(${GLM}/detail DETAIL)
-
-target_include_directories(native-lib PRIVATE ${GLM} ${GTC} ${DETAIL} ${GTX})
-
+# Add Assimp and OpenCV directories
 add_subdirectory(${CMAKE_SOURCE_DIR}/Assimp)
 include_directories(${CMAKE_SOURCE_DIR}/Assimp/include ${CMAKE_SOURCE_DIR}/opencv/include)
+
+# Set libraries
 set(ATLAS_ENGINE_LIBS assimp)
 set(ATLAS_ENGINE_SYSTEM_LIBS android EGL GLESv2 GLESv3 m)
 
+# Set OpenCV properties
 set(distribution_DIR ../../../../libs)
 add_library(opencv_java3 SHARED IMPORTED)
 set_target_properties(
         opencv_java3 PROPERTIES IMPORTED_LOCATION
         ${distribution_DIR}/${ANDROID_ABI}/libopencv_java3.so
 )
+
+# Link libraries
 target_link_libraries(
         native-lib
         opencv_java3
