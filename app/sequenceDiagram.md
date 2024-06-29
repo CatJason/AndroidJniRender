@@ -1,6 +1,6 @@
 JNIUtils MyJNIHelper::MyJNIHelper
-                                    modelAssimp ModelAssimp::ModelAssimp
-                                    modelAssimp ModelAssimp::PerformGLInits
+                                    modelAssimp AssimpPinkFoxModel::AssimpPinkFoxModel
+                                    modelAssimp AssimpPinkFoxModel::PerformGLInit
                                                                                 myGLFunctions GLConfigInit
                                                                                 myGLFunctions CheckGLError
                                                                                                             assimpLoader AssimpLoader::AssimpLoader
@@ -26,17 +26,17 @@ JNIUtils MyJNIHelper::ExtractAssetReturnFilename
                                                                                 myGLFunctions CheckGLError
                                                                                                                                                                                         assimpLoader AssimpLoader::BuildGLBuffers
                                                                                 myGLFunctions CheckGLError
-                                    modelAssimp ModelAssimp::SetViewport
+                                    modelAssimp AssimpPinkFoxModel::SetViewport
                                                                                 myGLFunctions CheckGLError
-                                    modelAssimp ModelAssimp::Render
+                                    modelAssimp AssimpPinkFoxModel::Render
                                                                                                                                                                                         assimpLoader AssimpLoader::Render3DModel
                                                                                 myGLFunctions CheckGLError
                                                                                 myGLFunctions CheckGLError
-                                    modelAssimp ModelAssimp::Render
+                                    modelAssimp AssimpPinkFoxModel::Render
                                                                                                                                                                                         assimpLoader AssimpLoader::Render3DModel
                                                                                 myGLFunctions CheckGLError
                                                                                 myGLFunctions CheckGLError
-                                    modelAssimp ModelAssimp::ModelAssimpssimp
+                                    modelAssimp AssimpPinkFoxModel::ModelAssimpssimp
                                                                                                                                                                                         assimpLoader AssimpLoader::~AssimpLoader
                                                                                                                                                                                         assimpLoader AssimpLoader::Delete3DModel
 JNIUtils MyJNIHelper::~MyJNIHelper

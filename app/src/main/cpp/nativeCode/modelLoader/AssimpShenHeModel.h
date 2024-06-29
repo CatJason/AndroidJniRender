@@ -1,10 +1,10 @@
 #ifndef MODELASSIMP_H
 #define MODELASSIMP_H
 
-#include "../utils/logUtils.h"
-#include "../gl/GLManager.h"
-#include "../camera/GLCamera.h"
-#include "assimpLoader.h"
+#include "utils/logUtils.h"
+#include "gl/GLManager.h"
+#include "camera/GLCamera.h"
+#include "AssimpLoader.h"
 #include <sstream>
 #include <iostream>
 #include <stdio.h>
@@ -20,12 +20,12 @@ namespace std {
     }
 }
 
-class ModelAssimp {
+class AssimpShenHeModel {
 public:
-    ModelAssimp();
-    ~ModelAssimp();
+    AssimpShenHeModel();
+    ~AssimpShenHeModel();
 
-    void PerformGLInits();
+    void PerformGLInit();
     void Render();
     void SetViewport(int width, int height);
     void DoubleTapAction();
