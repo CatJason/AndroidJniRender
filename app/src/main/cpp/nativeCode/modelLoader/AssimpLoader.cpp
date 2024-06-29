@@ -1,4 +1,4 @@
-#include <assimpLoader.h>
+#include <AssimpLoader.h>
 #include <shader/shaderLoader.h>
 #include <utils/fileUtils.h>
 #include <utils/logUtils.h>

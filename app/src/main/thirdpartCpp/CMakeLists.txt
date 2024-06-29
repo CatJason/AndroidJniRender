@@ -23,7 +23,8 @@ add_library(
         ${GL_DIR}/GLManager.cpp
         ${UTILS_DIR}/assetManager.cpp
         ${SHADER_DIR}/shaderLoader.cpp
-        ${MODEL_LOADER_DIR}/assimpPinkFoxModel.cpp
+        ${MODEL_LOADER_DIR}/AssimpPinkFoxModel.cpp
+        ${MODEL_LOADER_DIR}/AssimpShenHeModel.cpp
 )
 
 # Include directories

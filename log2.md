@@ -2,8 +2,8 @@ onCreate: 调用本地构造函数创建一个对象
 AssetManagerUtils::AssetManagerUtils - 构造函数初始化
 GLCamera::GLCamera
 GLCamera::GLCamera - 初始化相机
-ModelAssimp::ModelAssimp - 构造函数初始化
-ModelAssimp::InitializeModelDefaultPosition - 初始化模型默认位置
+AssimpPinkFoxModel::AssimpPinkFoxModel - 构造函数初始化
+AssimpPinkFoxModel::InitializeModelDefaultPosition - 初始化模型默认位置
 GLCamera::SetModelPosition
 GLCamera::SetModelPosition - 设置模型位置: x=0.000000, y=0.000000, z=0.000000, pitch=0.200000, yaw=0.500000, roll=0.000000
 GLCamera::UpdatePosition - 更新位置: x=0.000000, y=0.000000, z=0.000000
@@ -46,7 +46,7 @@ Access denied finding property "vendor.migl.debug"
 libmigl:This GPU version is note support Variable Shading Rate
 libmigl:This GPU version is note support Variable Shading Rate
 onSurfaceCreated: 表面已创建或重新创建
-ModelAssimp::PerformGLInits - 执行OpenGL初始化操作
+AssimpPinkFoxModel::PerformGLInit - 执行OpenGL初始化操作
 GLConfigInit - 初始化OpenGL配置
 GLConfigInit - 设置背景颜色为白色
 GLConfigInit - 启用深度测试并设置深度测试函数为小于等于
@@ -80,7 +80,7 @@ pre_cache appList: ,,
 获取属性位置：vertexUV
 获取uniform位置：mvpMat
 获取uniform位置：textureSampler
-ModelAssimp::LoadAssetPaths - 加载资源路径
+AssimpPinkFoxModel::LoadAssetPaths - 加载资源路径
 AssetManagerUtils::ExtractAssetReturnFilename - 提取资产文件：pinkfox/pinkFox.obj
 ExtractFileName - 去除路径并返回文件名：pinkfox/pinkFox.obj
 ExtractFileName - 提取后的文件名：pinkFox.obj
@@ -88,38 +88,38 @@ AssetManagerUtils::ExtractAssetReturnFilename - 资产文件打开成功：pinkf
 MiuiProcessManagerServiceStub setSchedFifo
 setSchedFifo pid:16803, mode:3
 提取资源文件：/data/user/0/com.hyq.hm.test.assimp/files/pinkFox.obj
-ModelAssimp::LoadAssetPaths - 提取资源文件: /data/user/0/com.hyq.hm.test.assimp/files/pinkFox.obj
+AssimpPinkFoxModel::LoadAssetPaths - 提取资源文件: /data/user/0/com.hyq.hm.test.assimp/files/pinkFox.obj
 AssetManagerUtils::ExtractAssetReturnFilename - 提取资产文件：pinkfox/pinkFox.mtl
 ExtractFileName - 去除路径并返回文件名：pinkfox/pinkFox.mtl
 ExtractFileName - 提取后的文件名：pinkFox.mtl
 AssetManagerUtils::ExtractAssetReturnFilename - 资产文件打开成功：pinkfox/pinkFox.mtl
 提取资源文件：/data/user/0/com.hyq.hm.test.assimp/files/pinkFox.mtl
-ModelAssimp::LoadAssetPaths - 提取资源文件: /data/user/0/com.hyq.hm.test.assimp/files/pinkFox.mtl
+AssimpPinkFoxModel::LoadAssetPaths - 提取资源文件: /data/user/0/com.hyq.hm.test.assimp/files/pinkFox.mtl
 AssetManagerUtils::ExtractAssetReturnFilename - 提取资产文件：pinkfox/body.jpg
 ExtractFileName - 去除路径并返回文件名：pinkfox/body.jpg
 ExtractFileName - 提取后的文件名：body.jpg
 AssetManagerUtils::ExtractAssetReturnFilename - 资产文件打开成功：pinkfox/body.jpg
 提取资源文件：/data/user/0/com.hyq.hm.test.assimp/files/body.jpg
-ModelAssimp::LoadAssetPaths - 提取资源文件: /data/user/0/com.hyq.hm.test.assimp/files/body.jpg
+AssimpPinkFoxModel::LoadAssetPaths - 提取资源文件: /data/user/0/com.hyq.hm.test.assimp/files/body.jpg
 AssetManagerUtils::ExtractAssetReturnFilename - 提取资产文件：pinkfox/hair.jpg
 ExtractFileName - 去除路径并返回文件名：pinkfox/hair.jpg
 ExtractFileName - 提取后的文件名：hair.jpg
 AssetManagerUtils::ExtractAssetReturnFilename - 资产文件打开成功：pinkfox/hair.jpg
 提取资源文件：/data/user/0/com.hyq.hm.test.assimp/files/hair.jpg
-ModelAssimp::LoadAssetPaths - 提取资源文件: /data/user/0/com.hyq.hm.test.assimp/files/hair.jpg
+AssimpPinkFoxModel::LoadAssetPaths - 提取资源文件: /data/user/0/com.hyq.hm.test.assimp/files/hair.jpg
 AssetManagerUtils::ExtractAssetReturnFilename - 提取资产文件：pinkfox/skin.jpg
 ExtractFileName - 去除路径并返回文件名：pinkfox/skin.jpg
 ExtractFileName - 提取后的文件名：skin.jpg
 AssetManagerUtils::ExtractAssetReturnFilename - 资产文件打开成功：pinkfox/skin.jpg
 [VRI[AssimpActivity]#0](f:0,a:1) acquireNextBufferLocked size=1080x2322 mFrameNumber=1 applyTransaction=true mTimestamp=22944464461674(auto) mPendingTransactions.size=0 graphicBufferId=72168335474688 transform=0
 提取资源文件：/data/user/0/com.hyq.hm.test.assimp/files/skin.jpg
-ModelAssimp::LoadAssetPaths - 提取资源文件: /data/user/0/com.hyq.hm.test.assimp/files/skin.jpg
+AssimpPinkFoxModel::LoadAssetPaths - 提取资源文件: /data/user/0/com.hyq.hm.test.assimp/files/skin.jpg
 AssetManagerUtils::ExtractAssetReturnFilename - 提取资产文件：pinkfox/face.jpg
 ExtractFileName - 去除路径并返回文件名：pinkfox/face.jpg
 ExtractFileName - 提取后的文件名：face.jpg
 AssetManagerUtils::ExtractAssetReturnFilename - 资产文件打开成功：pinkfox/face.jpg
 提取资源文件：/data/user/0/com.hyq.hm.test.assimp/files/face.jpg
-ModelAssimp::LoadAssetPaths - 提取资源文件: /data/user/0/com.hyq.hm.test.assimp/files/face.jpg
+AssimpPinkFoxModel::LoadAssetPaths - 提取资源文件: /data/user/0/com.hyq.hm.test.assimp/files/face.jpg
 AssimpLoader::Load3DModel - 加载3D模型: /data/user/0/com.hyq.hm.test.assimp/files/pinkFox.obj
 Scene will be imported now
 Expecting binder but got null!
@@ -276,7 +276,7 @@ AssimpLoader::BindBuffers - 绑定缓冲区
 AssimpLoader::BuildTextureIndex - 构建纹理索引
 加载顶点与纹理坐标成功
 onSurfaceChanged: 表面大小已更改，宽度 = 1080，高度 = 2280
-ModelAssimp::SetViewport - 设置视口: width=1080, height=2280
+AssimpPinkFoxModel::SetViewport - 设置视口: width=1080, height=2280
 GLCamera::SetAspectRatio
 GLCamera::SetAspectRatio - 设置纵横比: 0.473684
 GLCamera::ComputeMVPMatrix - 计算MVP矩阵

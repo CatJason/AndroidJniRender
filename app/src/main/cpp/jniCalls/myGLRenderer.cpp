@@ -1,12 +1,12 @@
 #include <jni.h> // 引入JNI头文件，用于实现Java与本地C/C++代码之间的互操作性。
-#include "../nativeCode/modelLoader/assimpPinkFoxModel.h" // 引入Assimp模型加载功能的特定头文件。
+#include <modelLoader/AssimpPinkFoxModel.h>
+#include <modelLoader/AssimpShenHeModel.h>
 
 #ifdef __cplusplus
 extern "C" { // 确保与C语言的兼容性，因为JNI使用C语言命名和链接约定。
 #endif
 
-extern ModelAssimp *gAssimpObject; // 声明一个全局指针，指向Assimp模型对象，供各个本地方法使用。
-
+extern AssimpPinkFoxModel *gAssimpPinkFoxModel; // 声明一个全局指针，指向Assimp模型对象，供各个本地方法使用。
 /**
  * 当需要绘制新的一帧时由Java层调用。
  * 如果Assimp模型对象存在，则调用其渲染方法。
@@ -17,10 +17,10 @@ Java_com_anandmuralidhar_assimpandroid_MyGLRenderer_drawFrameNative(
         jobject instance
 ) {
 
-    if (gAssimpObject == nullptr) {
+    if (gAssimpPinkFoxModel == nullptr) {
         return; // 如果全局Assimp对象未初始化，则不执行任何操作。
     }
-    gAssimpObject->Render(); // 调用Assimp对象的渲染方法来绘制一帧。
+    gAssimpPinkFoxModel->Render(); // 调用Assimp对象的渲染方法来绘制一帧。
 }
 
 /**
@@ -33,10 +33,10 @@ Java_com_anandmuralidhar_assimpandroid_MyGLRenderer_surfaceCreatedNative(
         jobject instance
 ) {
 
-    if (gAssimpObject == nullptr) {
+    if (gAssimpPinkFoxModel == nullptr) {
         return; // 如果全局Assimp对象未初始化，则不执行任何操作。
     }
-    gAssimpObject->PerformGLInits(); // 调用Assimp对象的OpenGL初始化方法。
+    gAssimpPinkFoxModel->PerformGLInit(); // 调用Assimp对象的OpenGL初始化方法。
 }
 
 /**
@@ -51,10 +51,10 @@ Java_com_anandmuralidhar_assimpandroid_MyGLRenderer_surfaceChangedNative(
         jint height
 ) {
 
-    if (gAssimpObject == nullptr) {
+    if (gAssimpPinkFoxModel == nullptr) {
         return; // 如果全局Assimp对象未初始化，则不执行任何操作。
     }
-    gAssimpObject->SetViewport(width, height); // 根据新的宽度和高度设置视口。
+    gAssimpPinkFoxModel->SetViewport(width, height); // 根据新的宽度和高度设置视口。
 }
 
 #ifdef __cplusplus
