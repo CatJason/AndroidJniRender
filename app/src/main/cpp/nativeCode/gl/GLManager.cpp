@@ -1,6 +1,6 @@
-#include "GLManager.h"
+#include <GLManager.h>
 #include <sstream>
-#include "../utils/logUtils.h"
+#include <utils/logUtils.h>
 
 /**
  * 初始化OpenGL的基本配置。

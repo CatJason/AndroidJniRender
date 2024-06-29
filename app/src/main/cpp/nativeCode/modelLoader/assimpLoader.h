@@ -9,7 +9,7 @@
 #include <vector>
 #include <GLES2/gl2.h>
 #include <memory>
-#include "../../../thirdpartCpp/glm/detail/type_mat.hpp"
+#include <detail/type_mat.hpp>
 
 struct MeshInfo {
     GLuint vertexBuffer;

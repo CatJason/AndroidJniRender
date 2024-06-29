@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include "shaderLoader.h"
-#include "../utils/assetManager.h"
+#include <shaderLoader.h>
+#include <utils/assetManager.h>
 
 /**
  * 从assets中读取着色器代码

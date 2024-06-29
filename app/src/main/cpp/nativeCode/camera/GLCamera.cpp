@@ -1,5 +1,5 @@
-#include "GLCamera.h"
-#include "../utils/logUtils.h"
+#include <GLCamera.h>
+#include <utils/logUtils.h>
 #include <cmath>
 
 /**
