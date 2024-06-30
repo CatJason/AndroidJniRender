@@ -5,6 +5,7 @@
 #include <memory>
 #include <vector>
 #include <algorithm>
+#include <utils/uniquePtrUtils.h>
 
 AssimpPinkFoxModel::AssimpPinkFoxModel()
         : initsDone(false),
@@ -22,7 +23,7 @@ AssimpPinkFoxModel::~AssimpPinkFoxModel() {
 }
 void AssimpPinkFoxModel::InitializeModelDefaultPosition() {
     MyLOGI("ModelAssimp::InitializeModelDefaultPosition - 初始化模型默认位置");
-    float pos[] = {-20.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f}; // 向左移动
+    float pos[] = {-5.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f}; // 向左移动
     std::copy(pos, pos + 6, std::back_inserter(modelDefaultPosition));
 }
 
@@ -66,7 +67,6 @@ std::vector<std::string> AssimpPinkFoxModel::LoadAssetPaths() {
 }
 
 void AssimpPinkFoxModel::Render() {
-    ClearScreen();
     UpdateRotation();
     RenderModel();
     CheckGLError("ModelAssimp::Render");

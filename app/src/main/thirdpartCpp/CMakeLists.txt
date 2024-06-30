@@ -24,7 +24,7 @@ add_library(
         ${UTILS_DIR}/assetManager.cpp
         ${SHADER_DIR}/shaderLoader.cpp
         ${MODEL_LOADER_DIR}/AssimpPinkFoxModel.cpp
-        ${MODEL_LOADER_DIR}/AssimpShenHeModel.cpp
+        ${MODEL_LOADER_DIR}/AssimpYinModel.cpp
 )
 
 # Include directories

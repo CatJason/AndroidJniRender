@@ -287,8 +287,6 @@ void AssimpLoader::Render3DModel(glm::mat4* mvpMat) {
         MyLOGI("AssimpLoader::Render3DModel - 对象未加载");
         return;
     }
-
-    ClearBuffers();
     UseShaderProgram();
     SetModelViewProjectionMatrix(mvpMat);
     SetActiveTextureUnit();

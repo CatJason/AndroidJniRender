@@ -1,7 +1,7 @@
 #include <jni.h> // 引入JNI头文件，用于实现Java与本地C/C++代码之间的互操作性。
 #include <modelLoader/AssimpPinkFoxModel.h> // 引入Assimp模型加载功能的特定头文件。
 #include <utils/assetManager.h>
-#include "AssimpShenHeModel.h"
+#include <modelLoader/AssimpYinModel.h> // 引入Assimp模型加载功能的特定头文件。
 
 #ifdef __cplusplus
 extern "C" { // 确保与C语言的兼容性，因为JNI使用C语言命名和链接约定。
@@ -9,7 +9,7 @@ extern "C" { // 确保与C语言的兼容性，因为JNI使用C语言命名和�
 
 // 使用全局指针在JNI调用中引用同一个类型为Cube的对象
 AssimpPinkFoxModel *gAssimpPinkFoxModel = nullptr;
-AssimpShenHeModel *gAssimpShenHeModel = nullptr;
+AssimpYinModel *gAssimpYinModel = nullptr;
 
 // 使用全局指针引用MyJNIHelper的实例，该实例用于从assets读取资源
 AssetManagerUtils *gHelperObject = nullptr;
@@ -32,6 +32,7 @@ Java_com_anandmuralidhar_assimpandroid_AssimpActivity_createObjectNative(
     gHelperObject = new AssetManagerUtils(env, instance, assetManager, pathToInternalDir);
     // 创建ModelAssimp对象并将其赋值给全局变量gAssimpObject，用于3D模型处理
     gAssimpPinkFoxModel = new AssimpPinkFoxModel();
+    gAssimpYinModel = new AssimpYinModel();
 }
 
 /**
@@ -51,6 +52,11 @@ Java_com_anandmuralidhar_assimpandroid_AssimpActivity_deleteObjectNative(
     }
     // 将gAssimpObject指针置为nullptr，表示不再指向任何对象
     gAssimpPinkFoxModel = nullptr;
+
+    if (gAssimpYinModel != nullptr) {
+        delete gAssimpYinModel;
+    }
+    gAssimpYinModel = nullptr;
 
     // 如果gHelperObject不是nullptr（即已分配内存），则删除gHelperObject指向的对象
     if (gHelperObject != nullptr) {
