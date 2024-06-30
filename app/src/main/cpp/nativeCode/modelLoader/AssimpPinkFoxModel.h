@@ -12,14 +12,6 @@
 #include <memory>
 #include <vector>
 
-// 自定义 make_unique 实现
-namespace std {
-    template<typename T, typename... Args>
-    std::unique_ptr<T> make_unique(Args&&... args) {
-        return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
-    }
-}
-
 class AssimpPinkFoxModel {
 public:
     AssimpPinkFoxModel();
