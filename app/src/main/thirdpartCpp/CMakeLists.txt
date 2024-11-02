@@ -43,27 +43,20 @@ target_include_directories(native-lib PRIVATE
 
 # Find libraries
 find_library(log-lib log)
+find_library(android-lib android)
 
-# Add Assimp and OpenCV directories
+# Add Assimp directories
 add_subdirectory(${CMAKE_SOURCE_DIR}/Assimp)
-include_directories(${CMAKE_SOURCE_DIR}/Assimp/include ${CMAKE_SOURCE_DIR}/opencv/include)
+include_directories(${CMAKE_SOURCE_DIR}/Assimp/include)
 
 # Set libraries
 set(ATLAS_ENGINE_LIBS assimp)
 set(ATLAS_ENGINE_SYSTEM_LIBS android EGL GLESv2 GLESv3 m)
 
-# Set OpenCV properties
-set(distribution_DIR ../../../../libs)
-add_library(opencv_java3 SHARED IMPORTED)
-set_target_properties(
-        opencv_java3 PROPERTIES IMPORTED_LOCATION
-        ${distribution_DIR}/${ANDROID_ABI}/libopencv_java3.so
-)
-
 # Link libraries
 target_link_libraries(
         native-lib
-        opencv_java3
+        jnigraphics
         ${ATLAS_ENGINE_LIBS}
         ${ATLAS_ENGINE_SYSTEM_LIBS}
         ${log-lib}

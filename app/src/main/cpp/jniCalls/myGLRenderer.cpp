@@ -39,10 +39,10 @@ Java_com_anandmuralidhar_assimpandroid_MyGLRenderer_surfaceCreatedNative(
 ) {
 
     if (gAssimpPinkFoxModel != nullptr) {
-        gAssimpPinkFoxModel->PerformGLInit(); // 调用Assimp对象的OpenGL初始化方法。
+        gAssimpPinkFoxModel->PerformGLInit(env); // 调用Assimp对象的OpenGL初始化方法。
     }
     if (gAssimpYinModel != nullptr) {
-        gAssimpYinModel->PerformGLInit(); // 调用Assimp对象的OpenGL初始化方法。
+        gAssimpYinModel->PerformGLInit(env); // 调用Assimp对象的OpenGL初始化方法。
     }
 }
 

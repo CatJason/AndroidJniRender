@@ -1,7 +1,6 @@
 #include <AssimpYinModel.h>
 #include <assimp/Importer.hpp>
 #include <utils/assetManager.h>
-#include <opencv2/opencv.hpp>
 #include <memory>
 #include <vector>
 #include <algorithm>
@@ -28,7 +27,7 @@ void AssimpYinModel::InitializeModelDefaultPosition() {
     std::copy(pos, pos + 6, std::back_inserter(modelDefaultPosition));
 }
 
-void AssimpYinModel::PerformGLInit() {
+void AssimpYinModel::PerformGLInit(JNIEnv *env) {
     MyLOGI("AssimpYinModel::PerformGLInit - 执行OpenGL初始化操作");
     GLConfigInit();
 
@@ -36,7 +35,7 @@ void AssimpYinModel::PerformGLInit() {
 
     std::vector<std::string> filenames = LoadAssetPaths();
 
-    assimpLoader->Load3DModel(filenames[0]);
+    assimpLoader->Load3DModel(env, filenames[0]);
 
     CheckGLError("AssimpYinModel::PerformGLInit");
     initsDone = true;

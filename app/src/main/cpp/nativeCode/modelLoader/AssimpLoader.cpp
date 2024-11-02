@@ -2,9 +2,10 @@
 #include <shader/shaderLoader.h>
 #include <utils/fileUtils.h>
 #include <utils/logUtils.h>
-#include <opencv2/opencv.hpp>
 #include <utility>
 #include <memory>
+#include <android/bitmap.h>
+
 
 // 如果没有 std::make_unique，可以手动实现它
 namespace std {
@@ -140,25 +141,20 @@ void AssimpLoader::GenerateTextureGLNames(int numTextures, GLuint*& textureGLNam
     glGenTextures(numTextures, textureGLNames);
 }
 
-void AssimpLoader::LoadTextureImages(const std::string& modelDirectoryName, GLuint* textureGLNames) {
+void AssimpLoader::LoadTextureImages(JNIEnv *env, const std::string& modelDirectoryName, GLuint* textureGLNames) {
     MyLOGI("AssimpLoader::LoadTextureImages - 加载纹理图像");
     int i = 0;
+
     for (auto& textureEntry : textureNameMap) {
         std::string textureFullPath = modelDirectoryName + "/" + textureEntry.first;
         textureEntry.second = textureGLNames[i];
 
         MyLOGI("Loading texture %s", textureFullPath.c_str());
-        cv::Mat textureImage = cv::imread(textureFullPath);
-        if (!textureImage.empty()) {
-            MyLOGI("AssimpLoader::LoadTextureImages - 成功加载纹理 %s", textureFullPath.c_str());
-            cv::cvtColor(textureImage, textureImage, cv::COLOR_BGR2RGB);
-            cv::flip(textureImage, textureImage, 0);
 
-            glBindTexture(GL_TEXTURE_2D, textureGLNames[i]);
-            SetTextureParameters();
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, textureImage.cols, textureImage.rows, 0, GL_RGB, GL_UNSIGNED_BYTE, textureImage.data);
-
-            CheckGLError("AssimpLoader::LoadTextureImages");
+        jobject bitmap = LoadBitmapFromFile(env, textureFullPath);
+        if (bitmap) {
+            LoadTextureFromBitmap(env, bitmap, textureGLNames[i]);
+            env->DeleteLocalRef(bitmap);
         } else {
             MyLOGE("Couldn't load texture %s", textureEntry.first.c_str());
             delete[] textureGLNames;
@@ -168,13 +164,68 @@ void AssimpLoader::LoadTextureImages(const std::string& modelDirectoryName, GLui
     }
 }
 
+/**
+ * 从文件加载位图
+ */
+jobject AssimpLoader::LoadBitmapFromFile(JNIEnv *env, const std::string& filePath) {
+    jclass bitmapFactoryClass = env->FindClass("android/graphics/BitmapFactory");
+    jmethodID decodeFileMethod = env->GetStaticMethodID(bitmapFactoryClass, "decodeFile", "(Ljava/lang/String;)Landroid/graphics/Bitmap;");
+
+    jstring jFilePath = env->NewStringUTF(filePath.c_str());
+    jobject bitmap = env->CallStaticObjectMethod(bitmapFactoryClass, decodeFileMethod, jFilePath);
+    env->DeleteLocalRef(jFilePath);
+
+    return bitmap;
+}
+
+/**
+ * 从位图加载纹理
+ */
+void AssimpLoader::LoadTextureFromBitmap(JNIEnv *env, jobject bitmap, GLuint textureGLName) {
+    MyLOGI("AssimpLoader::LoadTextureFromBitmap - 成功加载纹理");
+
+    AndroidBitmapInfo info;
+    void* pixels;
+    if (AndroidBitmap_getInfo(env, bitmap, &info) < 0) {
+        MyLOGE("Failed to get bitmap info");
+        return;
+    }
+
+    if (AndroidBitmap_lockPixels(env, bitmap, &pixels) < 0) {
+        MyLOGE("Failed to lock pixels");
+        return;
+    }
+
+    // 创建纹理
+    glBindTexture(GL_TEXTURE_2D, textureGLName);
+    SetTextureParameters();
+
+    // 翻转 Y 轴
+    unsigned char* flippedPixels = new unsigned char[info.width * info.height * 4]; // 假设每个像素4个字节
+    unsigned char* originalPixels = static_cast<unsigned char*>(pixels);
+    for (int y = 0; y < info.height; ++y) {
+        memcpy(flippedPixels + (info.height - 1 - y) * info.width * 4,
+               originalPixels + y * info.width * 4,
+               info.width * 4);
+    }
+
+    // 上传纹理数据
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, info.width, info.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, flippedPixels);
+
+    // 清理
+    delete[] flippedPixels;
+    AndroidBitmap_unlockPixels(env, bitmap);
+    // 检查 OpenGL 错误
+    CheckGLError("AssimpLoader::LoadTextureFromBitmap");
+}
+
 void AssimpLoader::SetTextureParameters() {
     MyLOGI("AssimpLoader::SetTextureParameters - 设置纹理参数");
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 }
 
-bool AssimpLoader::LoadTexturesToGL(std::string modelFilename) {
+bool AssimpLoader::LoadTexturesToGL(JNIEnv *env, std::string modelFilename) {
     MyLOGI("AssimpLoader::LoadTexturesToGL - 将纹理加载到GL中");
     ExtractTextureFilenames();
 
@@ -185,7 +236,7 @@ bool AssimpLoader::LoadTexturesToGL(std::string modelFilename) {
     GenerateTextureGLNames(numTextures, textureGLNames);
 
     std::string modelDirectoryName = ExtractDirectoryName(std::move(modelFilename));
-    LoadTextureImages(modelDirectoryName, textureGLNames);
+    LoadTextureImages(env, modelDirectoryName, textureGLNames); // 传递 env 参数
 
     delete[] textureGLNames;
     return true;
@@ -195,7 +246,7 @@ bool AssimpLoader::LoadTexturesToGL(std::string modelFilename) {
  * 加载包含多个网格的通用OBJ -- 假设每个网格关联一个纹理
  * 不处理材质属性（如漫反射、镜面反射等）
  */
-bool AssimpLoader::Load3DModel(const std::string& modelFilename) {
+bool AssimpLoader::Load3DModel(JNIEnv *env, const std::string& modelFilename) {
     MyLOGI("AssimpLoader::Load3DModel - 加载3D模型: %s", modelFilename.c_str());
     MyLOGI("Scene will be imported now");
 
@@ -208,7 +259,9 @@ bool AssimpLoader::Load3DModel(const std::string& modelFilename) {
     }
 
     MyLOGI("导入 %s 成功.", modelFilename.c_str());
-    LoadTexturesToGL(modelFilename);
+
+    // 传递 env 参数
+    LoadTexturesToGL(env, modelFilename);
     MyLOGI("导入纹理成功");
 
     BuildGLBuffers();
@@ -217,6 +270,7 @@ bool AssimpLoader::Load3DModel(const std::string& modelFilename) {
     isObjectLoaded = true;
     return true;
 }
+
 
 /**
  * 清除与3D模型相关的内存

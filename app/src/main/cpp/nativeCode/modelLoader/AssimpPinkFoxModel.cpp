@@ -1,7 +1,6 @@
 #include <AssimpPinkFoxModel.h>
 #include <assimp/Importer.hpp>
 #include <utils/assetManager.h>
-#include <opencv2/opencv.hpp>
 #include <memory>
 #include <vector>
 #include <algorithm>
@@ -27,8 +26,7 @@ void AssimpPinkFoxModel::InitializeModelDefaultPosition() {
     std::copy(pos, pos + 6, std::back_inserter(modelDefaultPosition));
 }
 
-
-void AssimpPinkFoxModel::PerformGLInit() {
+void AssimpPinkFoxModel::PerformGLInit(JNIEnv *env) {
     MyLOGI("ModelAssimp::PerformGLInit - 执行OpenGL初始化操作");
     GLConfigInit();
 
@@ -36,11 +34,12 @@ void AssimpPinkFoxModel::PerformGLInit() {
 
     std::vector<std::string> filenames = LoadAssetPaths();
 
-    assimpLoader->Load3DModel(filenames[0]);
+    assimpLoader->Load3DModel(env, filenames[0]);
 
     CheckGLError("ModelAssimp::PerformGLInit");
     initsDone = true;
 }
+
 
 std::vector<std::string> AssimpPinkFoxModel::LoadAssetPaths() {
     MyLOGI("ModelAssimp::LoadAssetPaths - 加载资源路径");

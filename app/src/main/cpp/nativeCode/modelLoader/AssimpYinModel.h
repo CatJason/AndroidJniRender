@@ -17,7 +17,7 @@ public:
     AssimpYinModel();
     ~AssimpYinModel();
 
-    void PerformGLInit();
+    void PerformGLInit(JNIEnv *env);
     void Render();
     void SetViewport(int width, int height);
     void DoubleTapAction();
