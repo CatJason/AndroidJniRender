@@ -40,6 +40,11 @@ AssimpLoader::~AssimpLoader() {
     Delete3DModel();
 }
 
+/**
+ * 构建面缓冲区
+ * @param mesh aiMesh 对象
+ * @param meshInfo 存储面信息的结构体
+ */
 void AssimpLoader::BuildFaceBuffer(const aiMesh* mesh, MeshInfo& meshInfo) {
     MyLOGI("AssimpLoader::BuildFaceBuffer - 构建面缓冲区");
     if (meshInfo.numberOfFaces) {
@@ -58,6 +63,11 @@ void AssimpLoader::BuildFaceBuffer(const aiMesh* mesh, MeshInfo& meshInfo) {
     }
 }
 
+/**
+ * 构建顶点缓冲区
+ * @param mesh aiMesh 对象
+ * @param meshInfo 存储顶点信息的结构体
+ */
 void AssimpLoader::BuildVertexBuffer(const aiMesh* mesh, MeshInfo& meshInfo) {
     MyLOGI("AssimpLoader::BuildVertexBuffer - 构建顶点缓冲区");
     if (mesh->HasPositions()) {
@@ -67,6 +77,11 @@ void AssimpLoader::BuildVertexBuffer(const aiMesh* mesh, MeshInfo& meshInfo) {
     }
 }
 
+/**
+ * 构建纹理坐标缓冲区
+ * @param mesh aiMesh 对象
+ * @param meshInfo 存储纹理坐标信息的结构体
+ */
 void AssimpLoader::BuildTextureCoordBuffer(const aiMesh* mesh, MeshInfo& meshInfo) {
     MyLOGI("AssimpLoader::BuildTextureCoordBuffer - 构建纹理坐标缓冲区");
     if (mesh->HasTextureCoords(0)) {
@@ -82,12 +97,20 @@ void AssimpLoader::BuildTextureCoordBuffer(const aiMesh* mesh, MeshInfo& meshInf
     }
 }
 
+/**
+ * 绑定缓冲区
+ */
 void AssimpLoader::BindBuffers() {
     MyLOGI("AssimpLoader::BindBuffers - 绑定缓冲区");
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
+/**
+ * 构建纹理索引
+ * @param mesh aiMesh 对象
+ * @param meshInfo 存储纹理索引信息的结构体
+ */
 void AssimpLoader::BuildTextureIndex(const aiMesh* mesh, MeshInfo& meshInfo) {
     MyLOGI("AssimpLoader::BuildTextureIndex - 构建纹理索引");
     aiMaterial* mtl = scene->mMaterials[mesh->mMaterialIndex];
@@ -100,6 +123,9 @@ void AssimpLoader::BuildTextureIndex(const aiMesh* mesh, MeshInfo& meshInfo) {
     }
 }
 
+/**
+ * 构建OpenGL缓冲区
+ */
 void AssimpLoader::BuildGLBuffers() {
     MyLOGI("AssimpLoader::BuildGLBuffers - 构建GL缓冲区");
     for (unsigned int n = 0; n < scene->mNumMeshes; ++n) {
@@ -224,13 +250,18 @@ void AssimpLoader::SetTextureParameters() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 }
-
+/**
+ * 将纹理加载到OpenGL中
+ * @param env JNIEnv 指针
+ * @param modelFilename 模型文件名
+ * @return 如果成功加载纹理则返回true
+ */
 bool AssimpLoader::LoadTexturesToGL(JNIEnv *env, std::string modelFilename) {
     MyLOGI("AssimpLoader::LoadTexturesToGL - 将纹理加载到GL中");
     ExtractTextureFilenames();
 
     int numTextures = static_cast<int>(textureNameMap.size());
-    MyLOGI("Total number of textures is %d", numTextures);
+    MyLOGI("总纹理数量: %d", numTextures);
 
     GLuint* textureGLNames = nullptr;
     GenerateTextureGLNames(numTextures, textureGLNames);
@@ -243,12 +274,15 @@ bool AssimpLoader::LoadTexturesToGL(JNIEnv *env, std::string modelFilename) {
 }
 
 /**
- * 加载包含多个网格的通用OBJ -- 假设每个网格关联一个纹理
- * 不处理材质属性（如漫反射、镜面反射等）
+ * 加载包含多个网格的通用OBJ模型
+ * 假设每个网格关联一个纹理，不处理材质属性（如漫反射、镜面反射等）
+ * @param env JNIEnv 指针
+ * @param modelFilename 模型文件名
+ * @return 如果成功加载模型则返回true
  */
 bool AssimpLoader::Load3DModel(JNIEnv *env, const std::string& modelFilename) {
     MyLOGI("AssimpLoader::Load3DModel - 加载3D模型: %s", modelFilename.c_str());
-    MyLOGI("Scene will be imported now");
+    MyLOGI("场景将被导入");
 
     scene = importerPtr->ReadFile(modelFilename, aiProcessPreset_TargetRealtime_Quality);
 
@@ -271,7 +305,6 @@ bool AssimpLoader::Load3DModel(JNIEnv *env, const std::string& modelFilename) {
     return true;
 }
 
-
 /**
  * 清除与3D模型相关的内存
  */
@@ -285,33 +318,49 @@ void AssimpLoader::Delete3DModel() {
 }
 
 /**
- * 渲染3D模型，通过渲染对象中的每个网格实现
+ * 清除OpenGL缓冲区
  */
 void AssimpLoader::ClearBuffers() {
     // MyLOGI("AssimpLoader::ClearBuffers - 清除缓冲区");
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
+/**
+ * 使用着色器程序
+ */
 void AssimpLoader::UseShaderProgram() {
     // MyLOGI("AssimpLoader::UseShaderProgram - 使用着色器程序");
     glUseProgram(shaderProgramID);
 }
 
+/**
+ * 设置模型视图投影矩阵
+ * @param mvpMat 指向MVP矩阵的指针
+ */
 void AssimpLoader::SetModelViewProjectionMatrix(const glm::mat4* mvpMat) {
     // MyLOGI("AssimpLoader::SetModelViewProjectionMatrix - 设置MVP矩阵");
     glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, reinterpret_cast<const GLfloat*>(mvpMat));
 }
 
+/**
+ * 设置活动纹理单元
+ */
 void AssimpLoader::SetActiveTextureUnit() {
     // MyLOGI("AssimpLoader::SetActiveTextureUnit - 设置活动纹理单元");
     glActiveTexture(GL_TEXTURE0);
 }
 
+/**
+ * 设置纹理采样器uniform
+ */
 void AssimpLoader::SetTextureSamplerUniform() {
     // MyLOGI("AssimpLoader::SetTextureSamplerUniform - 设置纹理采样器");
     glUniform1i(textureSamplerLocation, 0);
 }
 
+/**
+ * 渲染模型中的所有网格
+ */
 void AssimpLoader::RenderMeshes() {
     // MyLOGI("AssimpLoader::RenderMeshes - 渲染网格");
     for (const auto& meshInfo : modelMeshes) {
@@ -335,6 +384,10 @@ void AssimpLoader::RenderMeshes() {
     }
 }
 
+/**
+ * 渲染3D模型
+ * @param mvpMat 指向MVP矩阵的指针
+ */
 void AssimpLoader::Render3DModel(glm::mat4* mvpMat) {
     // MyLOGI("AssimpLoader::Render3DModel - 渲染3D模型");
     if (!isObjectLoaded) {

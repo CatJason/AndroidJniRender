@@ -17,9 +17,6 @@ AssimpPinkFoxModel::AssimpPinkFoxModel()
     myGLCamera->SetModelPosition(modelDefaultPosition);
 }
 
-AssimpPinkFoxModel::~AssimpPinkFoxModel() {
-    MyLOGI("ModelAssimp::~ModelAssimp - 析构函数调用");
-}
 void AssimpPinkFoxModel::InitializeModelDefaultPosition() {
     MyLOGI("ModelAssimp::InitializeModelDefaultPosition - 初始化模型默认位置");
     float pos[] = {-5.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f}; // 向左移动
@@ -114,4 +111,8 @@ void AssimpPinkFoxModel::MoveAction(float distanceX, float distanceY) {
 void AssimpPinkFoxModel::UpdateRotation() {
     rotationAngle += 0.01f; // 调整旋转速度
     modelMatrix = glm::rotate(glm::mat4(1.0f), rotationAngle, glm::vec3(0.0f, 1.0f, 0.0f));
+}
+
+AssimpPinkFoxModel::~AssimpPinkFoxModel() {
+    MyLOGI("ModelAssimp::~ModelAssimp - 析构函数调用");
 }
