@@ -93,11 +93,6 @@ private:
     glm::mat4 modelMatrix; // 模型矩阵
 
     /**
-     * 清除屏幕。
-     */
-    void ClearScreen();
-
-    /**
      * 渲染3D模型。
      */
     void RenderModel();

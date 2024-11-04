@@ -6,10 +6,11 @@ import android.content.res.AssetManager
 import android.opengl.GLSurfaceView
 import android.os.Bundle
 import android.util.Log
+import com.anandmuralidhar.gltextureview.GLTextureView
 import com.hyq.hm.test.assimp.R
 
 class AssimpActivity : Activity() {
-    private var mGLView: GLSurfaceView? = null
+    private var mGLView: GLTextureView? = null
     private external fun createObjectNative(assetManager: AssetManager, pathToInternalDir: String)
     private external fun deleteObjectNative()
     var mGestureControl: GestureClass? = null
@@ -39,7 +40,7 @@ class AssimpActivity : Activity() {
     @SuppressLint("ClickableViewAccessibility")
     private fun initGLView() {
         Log.d("AssimpActivity", "initGLView: 初始化GLSurfaceView")
-        mGLView = findViewById<GLSurfaceView?>(R.id.gl_surface_view).apply {
+        mGLView = findViewById<GLTextureView?>(R.id.gl_surface_view).apply {
             initGestureControl()
             mGestureControl?.TwoFingerGestureListener?.let {
                 Log.d("AssimpActivity", "initGLView: 设置双指手势监听器")

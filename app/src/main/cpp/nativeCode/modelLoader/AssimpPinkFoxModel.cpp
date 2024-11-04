@@ -68,10 +68,6 @@ void AssimpPinkFoxModel::Render() {
     CheckGLError("ModelAssimp::Render");
 }
 
-void AssimpPinkFoxModel::ClearScreen() {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-}
-
 void AssimpPinkFoxModel::RenderModel() {
     glm::mat4 mvpMat = myGLCamera->GetMVP() * modelMatrix;
     assimpLoader->Render3DModel(&mvpMat);

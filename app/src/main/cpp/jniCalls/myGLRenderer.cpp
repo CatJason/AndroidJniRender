@@ -18,8 +18,13 @@ Java_com_anandmuralidhar_assimpandroid_MyGLRenderer_drawFrameNative(
         JNIEnv *env,
         jobject instance
 ) {
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f); // RGBA格式，最后一个参数为透明度
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    // MyLOGI("AssimpLoader::ClearBuffers - 清除缓冲区");
+
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+
     if (gAssimpPinkFoxModel != nullptr) {
         gAssimpPinkFoxModel->Render(); // 调用Assimp对象的渲染方法来绘制一帧。
     }

@@ -72,10 +72,6 @@ void AssimpYinModel::Render() {
     CheckGLError("AssimpYinModel::Render");
 }
 
-void AssimpYinModel::ClearScreen() {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-}
-
 void AssimpYinModel::RenderModel() {
     glm::mat4 mvpMat = myGLCamera->GetMVP() * modelMatrix;
     assimpLoader->Render3DModel(&mvpMat);

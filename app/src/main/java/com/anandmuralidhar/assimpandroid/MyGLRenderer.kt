@@ -17,10 +17,11 @@ package com.anandmuralidhar.assimpandroid
 
 import android.opengl.GLSurfaceView
 import android.util.Log
+import com.anandmuralidhar.gltextureview.GLTextureView
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 
-internal class MyGLRenderer : GLSurfaceView.Renderer {
+internal class MyGLRenderer : GLTextureView.Renderer {
 
     // 声明本地方法，用于绘制帧
     private external fun drawFrameNative()
@@ -39,10 +40,15 @@ internal class MyGLRenderer : GLSurfaceView.Renderer {
     }
 
     // 用于绘制当前帧
-    override fun onDrawFrame(unused: GL10) {
+    override fun onDrawFrame(unused: GL10): Boolean {
         // 调用本地渲染函数
         // Log.d("MyGLRenderer", "onDrawFrame: 正在绘制当前帧")
         drawFrameNative()
+        return true
+    }
+
+    override fun onSurfaceDestroyed() {
+
     }
 
     // 在表面创建后和GLES表面大小发生变化时调用，这通常会在设备方向改变时发生

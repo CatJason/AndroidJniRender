@@ -39,8 +39,6 @@ private:
     float rotationAngle; // 声明 rotationAngle;
     glm::mat4 modelMatrix;
 
-    void ClearScreen();
-
     void RenderModel();
 
     std::vector<std::string> LoadAssetPaths();
